@@ -6,17 +6,21 @@
 #    By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/12 11:38:54 by mvidal-h          #+#    #+#              #
-#    Updated: 2025/05/12 11:39:02 by mvidal-h         ###   ########.fr        #
+#    Updated: 2025/05/13 17:31:40 by mvidal-h         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = megaphone.cpp
+SRC =	main.cpp \
+		PhoneBook.utils.cpp \
+		PhoneBook.class.cpp \
+		Contact.class.cpp
+
 OBJ = $(SRC:.cpp=.o)
 CC = g++
 RM = rm -f
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
-NAME = megaphone
+NAME = phonebook
 
 all: $(NAME)
 

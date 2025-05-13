@@ -1,36 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.class.hpp                                :+:      :+:    :+:   */
+/*   PhoneBook.utils.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/13 10:13:43 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/05/13 17:01:45 by mvidal-h         ###   ########.fr       */
+/*   Created: 2025/05/13 12:10:27 by mvidal-h          #+#    #+#             */
+/*   Updated: 2025/05/13 17:43:34 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef PHONEBOOK_UTILS_HPP
+# define PHONEBOOK_UTILS_HPP
 
+# include <iostream>
 # include <string>
-#include <iostream>
-#include "PhoneBook.utils.hpp"
-# include "Contact.class.hpp"
-class	PhoneBook {
+# include <cstdlib>
 
-	private:
-		Contact	_contacts[8];
-		int		_contactCount;
-		
-	public:
-		PhoneBook(void);
-		~PhoneBook(void);
-
-		void	add(void);
-		void	search(void) const;
-
-		int		get_contactCount(void) const;
-};
+std::string get_non_empty_input(const std::string& prompt);
+std::string truncate(std::string str);
 
 #endif

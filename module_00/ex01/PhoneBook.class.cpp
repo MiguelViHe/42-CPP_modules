@@ -1,0 +1,84 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.class.cpp                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/13 10:44:34 by mvidal-h          #+#    #+#             */
+/*   Updated: 2025/05/13 18:52:11 by mvidal-h         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "PhoneBook.class.hpp"
+
+PhoneBook::PhoneBook(void)
+{
+	this->_contactCount = 0;
+	std::cout << "Welcome to PhoneBook" << std::endl;
+}
+
+PhoneBook::~PhoneBook(void)
+{
+	std::cout << "See you soon!" << std::endl;
+}
+
+int PhoneBook::get_contactCount(void) const
+{
+	return (this->_contactCount);
+}
+
+void	PhoneBook::add(void)
+{
+	std::string str;
+	Contact& contact = this->_contacts[this->_contactCount % 8];
+
+	// Advertencia si se va a sobrescribir un contacto
+	if (this->_contactCount > 7) {
+	std::cout << "Warning: overwriting info about "
+			  << _contacts[this->_contactCount % 8].get_fname()
+			  << std::endl;
+	}
+	str = get_non_empty_input("Enter first name: ");
+	contact.set_fname(str);
+	str = get_non_empty_input("Enter last name: ");
+	contact.set_lname(str);
+	str = get_non_empty_input("Enter nickname: ");
+	contact.set_nickname(str);
+	str = get_non_empty_input("Enter phone number: ");
+	contact.set_phone(str);
+	str = get_non_empty_input("Enter darkest secret: ");
+	contact.set_secret(str);
+	if (this->_contactCount < 8)
+		this->_contactCount++;
+}
+
+void	PhoneBook::search(void) const
+{
+	int	index;
+	std::string input;
+
+	std::cout << std::setw(10) << "index" << "|"
+			  << std::setw(10) << "first name" << "|"
+			  << std::setw(10) << "last name" << "|"
+			  << std::setw(10) << "nickname" << "|"
+			  << std::endl;
+	for (int i = 0; i < this->_contactCount; i++)
+		this->_contacts[i].print_summary(i);
+	std::cout << "Enter index to view details: ";
+	if (!std::getline(std::cin, input))
+	{
+		std::cerr << "Input error. Aborting." << std::endl;
+		exit(1);
+	}
+	if (input.length() != 1 || input[0] < '0' || input[0] > '7')//ARREGLAR AQUI
+	{
+		std::cout << "Invalid input. Please enter a digit between 0 and 7." << std::endl;
+		return;
+	}
+	index = input[0] - '0';
+	if (index >= 0 && index < this->_contactCount)
+		this->_contacts[index].print_details();
+	else
+		std::cout << "Invalid Index." << std::endl;
+}
