@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 10:44:34 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/05/13 18:52:11 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/05/14 09:54:57 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ void	PhoneBook::add(void)
 	std::string str;
 	Contact& contact = this->_contacts[this->_contactCount % 8];
 
-	// Advertencia si se va a sobrescribir un contacto
 	if (this->_contactCount > 7) {
 	std::cout << "Warning: overwriting info about "
 			  << _contacts[this->_contactCount % 8].get_fname()
@@ -71,7 +70,7 @@ void	PhoneBook::search(void) const
 		std::cerr << "Input error. Aborting." << std::endl;
 		exit(1);
 	}
-	if (input.length() != 1 || input[0] < '0' || input[0] > '7')//ARREGLAR AQUI
+	if (input.length() != 1 || input[0] < '0' || input[0] > '7')
 	{
 		std::cout << "Invalid input. Please enter a digit between 0 and 7." << std::endl;
 		return;
@@ -80,5 +79,5 @@ void	PhoneBook::search(void) const
 	if (index >= 0 && index < this->_contactCount)
 		this->_contacts[index].print_details();
 	else
-		std::cout << "Invalid Index." << std::endl;
+		std::cout << "Entry doesn't exist." << std::endl;
 }
