@@ -5,13 +5,13 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/05/12 11:38:54 by mvidal-h          #+#    #+#              #
-#    Updated: 2025/05/14 11:57:10 by mvidal-h         ###   ########.fr        #
+#    Created: 2025/05/14 10:02:29 by mvidal-h          #+#    #+#              #
+#    Updated: 2025/05/14 12:02:21 by mvidal-h         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	megaphone
-EXERCISE	=	ex00
+NAME		=	phonebook
+EXERCISE	=	ex02
 
 CC			=	c++
 CPPFLAGS		=	-Wall -Werror -Wextra -std=c++98
@@ -31,7 +31,8 @@ UP			=	\033[A
 CUT			=	\033[K
 
 #source files
-SRC_FILES	=	megaphone.cpp
+SRC_FILES	=	Account.cpp
+				
 OBJ_FILES	=	$(SRC_FILES:.cpp=.o)
 
 #paths

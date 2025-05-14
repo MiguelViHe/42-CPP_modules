@@ -5,34 +5,79 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/05/12 11:38:54 by mvidal-h          #+#    #+#              #
-#    Updated: 2025/05/13 17:31:40 by mvidal-h         ###   ########.fr        #
+#    Created: 2025/05/14 11:49:55 by mvidal-h          #+#    #+#              #
+#    Updated: 2025/05/14 12:01:12 by mvidal-h         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC =	main.cpp \
-		PhoneBook.utils.cpp \
-		PhoneBook.class.cpp \
-		Contact.class.cpp
+NAME		=	phonebook
+EXERCISE	=	ex01
 
-OBJ = $(SRC:.cpp=.o)
-CC = g++
-RM = rm -f
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
+CC			=	c++
+CPPFLAGS		=	-Wall -Werror -Wextra -std=c++98
 
-NAME = phonebook
+# directories
+SRC_DIR		=	src/
+OBJ_DIR		=	obj/
+INC_DIR		=	include/
 
+# controll codes
+RESET		=	\033[0m
+GREEN		=	\033[32m
+YELLOW		=	\033[33m
+BLUE		=	\033[34m
+RED			=	\033[31m
+UP			=	\033[A
+CUT			=	\033[K
+
+#source files
+SRC_FILES	=	main.cpp \
+				Contact.class.cpp \
+				PhoneBook.class.cpp \
+				PhoneBook.utils.cpp
+				
+OBJ_FILES	=	$(SRC_FILES:.cpp=.o)
+
+#paths
+SRC			=	$(addprefix $(SRC_DIR), $(SRC_FILES))
+OBJ			=	$(addprefix $(OBJ_DIR), $(OBJ_FILES))
+
+#all rule
 all: $(NAME)
 
+#compile the executable
 $(NAME): $(OBJ)
-	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
+	@echo -e "$(YELLOW)Compiling [$(NAME)]...$(RESET)"
+	@$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
+	@echo -e "$(GREEN)Finished [$(NAME)]$(RESET)"
 
+#compile objects
+$(OBJ_DIR)%.o:$(SRC_DIR)%.cpp
+	@mkdir -p $(OBJ_DIR)
+	@echo -e "$(YELLOW)Compiling [$@]...$(RESET)"
+	@$(CC) $(CFLAGS) -I $(INC_DIR) -o $@ -c $<
+	@printf "$(UP)$(CUT)"
+	@echo -e "$(GREEN)Finished [$@]$(RESET)"
+	@printf "$(UP)$(CUT)"
+
+#clean rule
 clean:
-	$(RM) $(OBJ)
+	@if [ -d "$(OBJ_DIR)" ]; then \
+	rm -rf $(OBJ_DIR); \
+	echo -e "$(BLUE)Deleting all objects from /$(EXERCISE)...$(RESET)"; else \
+	echo -e "No objects to remove from /$(EXERCISE)."; \
+	fi;
 
+#fclean rule
 fclean: clean
-	$(RM) $(NAME)
+	@if [ -f "$(NAME)" ]; then \
+	rm -f $(NAME); \
+	echo -e "$(BLUE)Deleting $(NAME) from $(EXERCISE)...$(RESET)"; else \
+	echo -e "No Executable to remove from $(EXERCISE)."; \
+	fi;
 
-re: fclean $(NAME)
+#re rule
+re: fclean all
 
+#phony
 .PHONY: all clean fclean re
