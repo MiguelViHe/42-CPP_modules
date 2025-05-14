@@ -6,11 +6,11 @@
 #    By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/14 10:02:29 by mvidal-h          #+#    #+#              #
-#    Updated: 2025/05/14 12:02:21 by mvidal-h         ###   ########.fr        #
+#    Updated: 2025/05/14 17:25:30 by mvidal-h         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	phonebook
+NAME		=	bank
 EXERCISE	=	ex02
 
 CC			=	c++
@@ -31,8 +31,7 @@ UP			=	\033[A
 CUT			=	\033[K
 
 #source files
-SRC_FILES	=	Account.cpp
-				
+SRC_FILES	=	tests.cpp Account.cpp
 OBJ_FILES	=	$(SRC_FILES:.cpp=.o)
 
 #paths
