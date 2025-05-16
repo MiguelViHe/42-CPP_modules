@@ -6,12 +6,14 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/14 12:05:32 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/05/14 17:55:50 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/05/16 12:48:24 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
 #include <iostream>
+#include <ctime>
+#include <iomanip> //para put_time
 
 // Init all the start-values
 int	Account::_nbAccounts = 0;
@@ -19,6 +21,7 @@ int	Account::_totalAmount = 0;
 int	Account::_totalNbDeposits = 0;
 int	Account::_totalNbWithdrawals = 0;
 
+//CONSTRUCTOR Y DESTRUCTOR
 Account::Account(void){}
 
 Account::Account(int initial_deposit)
@@ -28,8 +31,8 @@ Account::Account(int initial_deposit)
 	this->_nbDeposits = 0;
 	this->_nbWithdrawals = 0;
 	Account::_totalAmount += this->_amount;
-	Account::_displayTimestamp;
-	std::cout << " Index:"
+	Account::_displayTimestamp();
+	std::cout << "Index:"
 			  << this->_accountIndex
 			  << ";amount:"
 			  << this->_amount
@@ -65,3 +68,17 @@ void	Account::displayAccountsInfos(void)
 	
 }
 
+//OTHER FUNCTIONS
+
+// void	Account::displayAccountsInfos(void)
+// {
+	
+// }
+
+void	Account::_displayTimestamp(void)
+{
+	time_t	now;
+
+	now = time(NULL);
+	std::cout << std::put_time(localtime(&now), "[%Y%m%d_%H%M%S] ");
+}
