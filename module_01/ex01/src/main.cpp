@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/21 16:02:15 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/07/21 17:15:42 by mvidal-h         ###   ########.fr       */
+/*   Created: 2025/07/21 15:22:54 by mvidal-h          #+#    #+#             */
+/*   Updated: 2025/07/21 17:28:37 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NEWZOMBIE_HPP
-# define NEWZOMBIE_HPP
+#include "Zombie.hpp"
+#include "zombieHorde.hpp"
 
-# include "Zombie.hpp"
+int main(void)
+{
+	int	n = 8;
+	int	i = 0;
 
-Zombie*	newZombie(std::string name);
-
-#endif
+	Zombie *horde = zombieHorde(n, "mazmorreros");
+	for (i = 0; i < n; i++)
+		horde[i].announce();
+	delete[] horde;
+}

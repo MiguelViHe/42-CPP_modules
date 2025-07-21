@@ -1,20 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.hpp                                      :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/21 16:02:15 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/07/21 17:15:42 by mvidal-h         ###   ########.fr       */
+/*   Created: 2025/07/21 15:25:47 by mvidal-h          #+#    #+#             */
+/*   Updated: 2025/07/21 16:44:46 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef NEWZOMBIE_HPP
-# define NEWZOMBIE_HPP
+#include "Zombie.hpp"
 
-# include "Zombie.hpp"
+Zombie::Zombie(void){}
 
-Zombie*	newZombie(std::string name);
+Zombie::~Zombie(void)
+{
+	std::cout << this->_name << " Destroyed." << std::endl;
+}
 
-#endif
+std::string	Zombie::get_name(void) const
+{
+	return (this->_name);
+}
+
+void		Zombie::set_name(std::string str)
+{
+	this->_name = str;
+}
+
+void	Zombie::announce(void)
+{
+	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
