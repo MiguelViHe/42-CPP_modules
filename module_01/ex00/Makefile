@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/05/14 11:49:55 by mvidal-h          #+#    #+#              #
-#    Updated: 2025/05/22 15:59:17 by mvidal-h         ###   ########.fr        #
+#    Created: 2025/05/14 10:02:29 by mvidal-h          #+#    #+#              #
+#    Updated: 2025/07/21 16:44:05 by mvidal-h         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	zombies
+NAME		=	BraiiiiiiinnnzzzZ
 EXERCISE	=	ex00
 
 CC			=	c++
-CPPFLAGS		=	-Wall -Werror -Wextra -std=c++98
+CPPFLAGS		=	-Wall -Werror -Wextra -std=c++98 -fsanitize=address
 
 # directories
 SRC_DIR		=	src/
@@ -32,9 +32,9 @@ CUT			=	\033[K
 
 #source files
 SRC_FILES	=	main.cpp \
-				Contact.class.cpp \
-				PhoneBook.class.cpp \
-				PhoneBook.utils.cpp
+				Zombie.cpp \
+				newZombie.cpp \
+				randomChump.cpp
 				
 OBJ_FILES	=	$(SRC_FILES:.cpp=.o)
 
@@ -47,33 +47,33 @@ all: $(NAME)
 
 #compile the executable
 $(NAME): $(OBJ)
-	@echo "$(YELLOW)Compiling [$(NAME)]...$(RESET)"
+	@echo -e "$(YELLOW)Compiling [$(NAME)]...$(RESET)"
 	@$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
-	@echo "$(GREEN)Finished [$(NAME)]$(RESET)"
+	@echo -e "$(GREEN)Finished [$(NAME)]$(RESET)"
 
 #compile objects
 $(OBJ_DIR)%.o:$(SRC_DIR)%.cpp
 	@mkdir -p $(OBJ_DIR)
-	@echo "$(YELLOW)Compiling [$@]...$(RESET)"
+	@echo -e "$(YELLOW)Compiling [$@]...$(RESET)"
 	@$(CC) $(CFLAGS) -I $(INC_DIR) -o $@ -c $<
 	@printf "$(UP)$(CUT)"
-	@echo "$(GREEN)Finished [$@]$(RESET)"
+	@echo -e "$(GREEN)Finished [$@]$(RESET)"
 	@printf "$(UP)$(CUT)"
 
 #clean rule
 clean:
 	@if [ -d "$(OBJ_DIR)" ]; then \
 	rm -rf $(OBJ_DIR); \
-	echo "$(BLUE)Deleting all objects from /$(EXERCISE)...$(RESET)"; else \
-	echo "No objects to remove from /$(EXERCISE)."; \
+	echo -e "$(BLUE)Deleting all objects from /$(EXERCISE)...$(RESET)"; else \
+	echo -e "No objects to remove from /$(EXERCISE)."; \
 	fi;
 
 #fclean rule
 fclean: clean
 	@if [ -f "$(NAME)" ]; then \
 	rm -f $(NAME); \
-	echo "$(BLUE)Deleting $(NAME) from $(EXERCISE)...$(RESET)"; else \
-	echo "No Executable to remove from $(EXERCISE)."; \
+	echo -e "$(BLUE)Deleting $(NAME) from $(EXERCISE)...$(RESET)"; else \
+	echo -e "No Executable to remove from $(EXERCISE)."; \
 	fi;
 
 #re rule

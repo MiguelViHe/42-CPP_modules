@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/21 15:25:47 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/07/21 16:44:46 by mvidal-h         ###   ########.fr       */
+/*   Created: 2025/07/21 15:28:11 by mvidal-h          #+#    #+#             */
+/*   Updated: 2025/07/21 15:50:58 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
-Zombie::Zombie(void){}
+# include <string>
+# include <iostream>
+// # include <iomanip>
+class	Zombie {
 
-Zombie::~Zombie(void)
-{
-	std::cout << this->_name << " Destroyed." << std::endl;
-}
+	private:
+		std::string _name;
+		
+	public:
+		Zombie(void);
+		~Zombie(void);
+		//setters and getters
+		std::string get_name(void) const;
+		void		set_name(std::string str);
+		//methods
+		void		announce(void);
+	};
 
-std::string	Zombie::get_name(void) const
-{
-	return (this->_name);
-}
-
-void		Zombie::set_name(std::string str)
-{
-	this->_name = str;
-}
-
-void	Zombie::announce(void)
-{
-	std::cout << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
-}
+#endif
