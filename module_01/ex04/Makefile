@@ -6,11 +6,11 @@
 #    By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/14 10:02:29 by mvidal-h          #+#    #+#              #
-#    Updated: 2025/07/23 10:37:22 by mvidal-h         ###   ########.fr        #
+#    Updated: 2025/07/23 16:55:54 by mvidal-h         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	Sedisforlosers
+NAME		=	sedIsForLosers
 EXERCISE	=	ex04
 
 CC			=	c++

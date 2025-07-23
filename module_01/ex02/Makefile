@@ -6,11 +6,11 @@
 #    By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/14 10:02:29 by mvidal-h          #+#    #+#              #
-#    Updated: 2025/07/22 09:47:24 by mvidal-h         ###   ########.fr        #
+#    Updated: 2025/07/23 16:56:46 by mvidal-h         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	Hithisisbrain
+NAME		=	hiThisIsBrain
 EXERCISE	=	ex02
 
 CC			=	c++

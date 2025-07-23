@@ -6,11 +6,11 @@
 #    By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/14 10:02:29 by mvidal-h          #+#    #+#              #
-#    Updated: 2025/07/21 17:23:55 by mvidal-h         ###   ########.fr        #
+#    Updated: 2025/07/23 16:57:05 by mvidal-h         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	Moarbrainz
+NAME		=	moarBrainz
 EXERCISE	=	ex01
 
 CC			=	c++

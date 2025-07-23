@@ -6,11 +6,11 @@
 #    By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/14 10:02:29 by mvidal-h          #+#    #+#              #
-#    Updated: 2025/07/23 16:16:20 by mvidal-h         ###   ########.fr        #
+#    Updated: 2025/07/23 16:55:31 by mvidal-h         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	Harl2.0
+NAME		=	harl2.0
 EXERCISE	=	ex05
 
 CC			=	c++
