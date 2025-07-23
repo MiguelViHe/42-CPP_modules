@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   secure_open.template.hpp                           :+:      :+:    :+:   */
+/*   secureOpen.template.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 16:25:18 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/07/23 10:31:43 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/07/23 18:47:29 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <iostream>
 
 template <typename Stream>
-int secure_open(const std::string& filename, Stream& stream)
+int secureOpen(const std::string& filename, Stream& stream)
 {
 	stream.open(filename.c_str());
 	if (!stream) {
