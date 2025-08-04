@@ -6,12 +6,12 @@
 #    By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/14 10:02:29 by mvidal-h          #+#    #+#              #
-#    Updated: 2025/07/23 16:55:20 by mvidal-h         ###   ########.fr        #
+#    Updated: 2025/07/29 18:56:14 by mvidal-h         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	harlFilter
-EXERCISE	=	ex06
+NAME		=	a.out
+EXERCISE	=	ex00
 
 CC			=	c++
 CPPFLAGS		=	-Wall -Werror -Wextra -std=c++98 #-fsanitize=address
@@ -32,7 +32,7 @@ CUT			=	\033[K
 
 #source files
 SRC_FILES	=	main.cpp \
-				Harl.cpp
+				Fixed.cpp
 
 OBJ_FILES	=	$(SRC_FILES:.cpp=.o)
 
