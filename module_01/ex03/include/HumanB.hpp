@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 12:51:27 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/07/22 15:32:51 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/08/05 14:38:59 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class	HumanB {
 		
 	public:
 		HumanB(const std::string& name);
+		HumanB(const std::string& name, Weapon& w);
 		~HumanB(void);
 		//setters and getters
 		const std::string&	getName(void) const;
