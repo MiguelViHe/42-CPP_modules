@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 18:58:46 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/08/06 14:58:34 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/08/07 12:17:48 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,31 +16,31 @@
 
 // Constructor por defecto
 Fixed::Fixed() {
-	std::cout << "Default constructor called" << std::endl;
+	// std::cout << "Default constructor called" << std::endl;
 	this->_value = 0;
 }
 
 // Constructor con int como parametro
 Fixed::Fixed(const int n) {
-	std::cout << "Int constructor called" << std::endl;
+	// std::cout << "Int constructor called" << std::endl;
 	this->_value = n << FRACTIONAL_NUMBER;
 }
 
 // Constructor con float como parametro
 Fixed::Fixed(const float f) {
-	std::cout << "Float constructor called" << std::endl;
+	// std::cout << "Float constructor called" << std::endl;
 	this->_value = roundf(f * (1 << FRACTIONAL_NUMBER));
 }
 
 // Constructor de copia
 Fixed::Fixed(const Fixed& other) {
-	std::cout << "Copy constructor called" << std::endl;
+	// std::cout << "Copy constructor called" << std::endl;
 	this->_value = other.getRawBits();
 }
 
 // Operador de asignación
 Fixed& Fixed::operator=(const Fixed& rhs) {
-	std::cout << "Copy assignment operator called" << std::endl;
+	// std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &rhs)
 		this->_value = rhs.getRawBits();
 	return *this;
@@ -48,7 +48,7 @@ Fixed& Fixed::operator=(const Fixed& rhs) {
 
 // Destructor
 Fixed::~Fixed() {
-	std::cout << "Destructor called" << std::endl;
+	// std::cout << "Destructor called" << std::endl;
 }
 
 // Getter

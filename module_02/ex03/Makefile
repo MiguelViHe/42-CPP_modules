@@ -6,7 +6,7 @@
 #    By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/14 10:02:29 by mvidal-h          #+#    #+#              #
-#    Updated: 2025/08/06 14:29:20 by mvidal-h         ###   ########.fr        #
+#    Updated: 2025/08/07 11:47:42 by mvidal-h         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,9 @@ CUT			=	\033[K
 
 #source files
 SRC_FILES	=	main.cpp \
-				Fixed.cpp
+				Fixed.cpp \
+				Point.cpp \
+				bsp.cpp
 
 OBJ_FILES	=	$(SRC_FILES:.cpp=.o)
 
