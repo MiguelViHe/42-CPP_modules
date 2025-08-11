@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/11 12:35:16 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/08/11 14:45:42 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/08/11 15:13:23 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name)
 
 ScavTrap::ScavTrap(const ScavTrap& other) : ClapTrap(other)
 {
-    std::cout << "ScavTrap " << _name << " copy created\n";
+    std::cout << "ScavTrap " << _name << " copied\n";
 }
 
 ScavTrap& ScavTrap::operator=(const ScavTrap& rhs) {
