@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 18:58:26 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/07/29 19:23:29 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/08/11 11:23:23 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class Fixed {
 		void setRawBits(int const raw);
 
 	private:
-		int                 value;
+		int                 _value;
 		static const int    FRACTIONAL_NUMBER = 8;
 };
 

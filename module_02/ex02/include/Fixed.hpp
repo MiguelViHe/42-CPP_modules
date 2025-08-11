@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/29 18:58:26 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/08/04 16:06:49 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/08/11 11:24:02 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ class Fixed {
 		static const Fixed& max(const Fixed& a, const Fixed& b);
 
 	private:
-		int					value;
+		int					_value;
 		static const int	FRACTIONAL_NUMBER = 8;
 };
 
