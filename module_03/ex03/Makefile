@@ -6,12 +6,12 @@
 #    By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/14 10:02:29 by mvidal-h          #+#    #+#              #
-#    Updated: 2025/08/12 10:36:10 by mvidal-h         ###   ########.fr        #
+#    Updated: 2025/08/12 13:08:20 by mvidal-h         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	a.out
-EXERCISE	=	ex02
+EXERCISE	=	ex03
 
 CC			=	c++
 CPPFLAGS		=	-Wall -Werror -Wextra -std=c++98 #-fsanitize=address
@@ -34,7 +34,8 @@ CUT			=	\033[K
 SRC_FILES	=	main.cpp \
 				ClapTrap.cpp \
 				ScavTrap.cpp \
-				FragTrap.cpp
+				FragTrap.cpp \
+				DiamondTrap.cpp
 
 OBJ_FILES	=	$(SRC_FILES:.cpp=.o)
 

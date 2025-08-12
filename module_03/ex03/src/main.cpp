@@ -1,0 +1,45 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/08/11 12:14:29 by mvidal-h          #+#    #+#             */
+/*   Updated: 2025/08/12 14:30:16 by mvidal-h         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
+
+int main() {
+	ClapTrap humano("Ciri");
+	humano.attack("Target1");
+	humano.takeDamage(3);
+	humano.beRepaired(2);
+
+	ScavTrap humano2("Vin");
+	humano2.attack("Target2");
+	humano2.takeDamage(5);
+	humano2.beRepaired(3);
+	humano2.guardGate();
+
+	FragTrap humano3("Kaladin");
+	humano3.attack("Target3");
+	humano3.takeDamage(2);
+	humano3.beRepaired(1);
+	humano3.highFivesGuys();
+
+	DiamondTrap humano4("Guybrush");
+	humano4.attack("Target4");
+	humano4.takeDamage(200);
+	humano4.beRepaired(1);
+	humano4.highFivesGuys();
+	humano4.guardGate();
+	humano4.whoAmI();
+	return 0;
+
+}

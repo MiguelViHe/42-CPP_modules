@@ -6,12 +6,12 @@
 #    By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/14 10:02:29 by mvidal-h          #+#    #+#              #
-#    Updated: 2025/08/11 14:54:13 by mvidal-h         ###   ########.fr        #
+#    Updated: 2025/08/12 10:36:19 by mvidal-h         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	a.out
-EXERCISE	=	ex00
+EXERCISE	=	ex01
 
 CC			=	c++
 CPPFLAGS		=	-Wall -Werror -Wextra -std=c++98 #-fsanitize=address
