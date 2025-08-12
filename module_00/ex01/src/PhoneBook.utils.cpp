@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/13 12:12:55 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/05/13 17:47:09 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/08/12 16:04:54 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ std::string get_non_empty_input(const std::string& prompt)
 		}
 		if (!input.empty())
 			return (input);
-		std::cout << "This field cannot be empty. Please try again.\n";
+		std::cout << "This field cannot be empty. Please try again." << std::endl;
 	}
 }
 
