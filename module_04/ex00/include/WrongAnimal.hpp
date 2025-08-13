@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/12 15:37:45 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/08/13 10:52:06 by mvidal-h         ###   ########.fr       */
+/*   Created: 2025/08/13 10:53:24 by mvidal-h          #+#    #+#             */
+/*   Updated: 2025/08/13 10:56:10 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef WRONGANIMAL_HPP
+#define WRONGANIMAL_HPP
 
 #include <iostream>
 #include <string>
 
-class Animal {
+class WrongAnimal {
 public:
-    Animal();
-    Animal(const Animal& other);
-    Animal& operator=(const Animal& other);
-    virtual ~Animal();
+    WrongAnimal();
+    WrongAnimal(const WrongAnimal& other);
+    WrongAnimal& operator=(const WrongAnimal& other);
+    virtual ~WrongAnimal();
 
     void setType(const std::string& type);
     std::string getType() const;
 
     /*
-    Animal* a = new Dog();
-    a->makeSound();
-    
     virtual ->Polimorfismo: el método correcto se elige en tiempo de ejecución según el objeto real.
-    Sin virtual -> Llamada estática: se usa siempre el método de la clase base, incluso si el objeto real es de una clase derivada.*/
-    virtual void makeSound() const; 
+    Sin virtual -> Llamada estática: se usa siempre el método de la clase base, incluso si el objeto real es de una clase derivada.
+    */
+    void makeSound() const;
 
 protected:
     std::string _type;

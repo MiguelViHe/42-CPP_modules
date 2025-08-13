@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 15:55:53 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/08/12 16:37:55 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/08/13 10:44:32 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Dog::Dog() : Animal() {
     this->_type = "Dog";
-    std::cout << "Dog created." << std::endl;
+    std::cout << "Dog created" << std::endl;
 }
 
 Dog::Dog(const Dog& other) : Animal(other) {
