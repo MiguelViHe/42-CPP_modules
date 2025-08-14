@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 15:40:33 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/08/12 16:24:21 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/08/14 14:46:55 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define CAT_HPP
 
 #include "Animal.hpp"
-#include <iostream>
 
 class Cat : public Animal {
 public:

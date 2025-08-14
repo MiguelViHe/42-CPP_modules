@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 10:59:34 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/08/13 11:00:53 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/08/14 14:47:09 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define WRONGCAT_HPP
 
 #include "WrongAnimal.hpp"
-#include <iostream>
 
 class WrongCat : public WrongAnimal {
 public:

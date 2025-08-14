@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 15:40:24 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/08/12 16:24:07 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/08/14 14:46:59 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #define DOG_HPP
 
 #include "Animal.hpp"
-#include <iostream>
 
 class Dog : public Animal {
 public:

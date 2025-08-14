@@ -1,51 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/12 15:55:39 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/08/14 14:50:47 by mvidal-h         ###   ########.fr       */
+/*   Created: 2025/08/12 15:55:53 by mvidal-h          #+#    #+#             */
+/*   Updated: 2025/08/14 14:52:48 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <sstream>
-#include "Cat.hpp"
+#include "Dog.hpp"
 #include "Brain.hpp"
 
-Cat::Cat() : Animal("Cat"), _brain(new Brain()) {
+Dog::Dog() : Animal("Dog"), _brain(new Brain()) {
 	for (int i = 0; i < 100; ++i) {
 		std::ostringstream oss;
-		oss << "Idea " << i << " from Cat";
+		oss << "Idea " << i << " from Dog";
 		this->_brain->setIdea(i, oss.str());
 	}
-	std::cout << "Cat created" << std::endl;
+	std::cout << "Dog created" << std::endl;
 }
 
-Cat::Cat(const Cat& other) : Animal(other), _brain(new Brain(*other._brain)) {
-	std::cout << "Cat copied" << std::endl;
+Dog::Dog(const Dog& other) : Animal(other), _brain(new Brain(*other._brain)) {
+	std::cout << "Dog copied." << std::endl;
 }
 
-Cat& Cat::operator=(const Cat& rhs) {
+Dog& Dog::operator=(const Dog& rhs) {
 	if (this != &rhs) {
 		Animal::operator=(rhs);
 		*this->_brain = *rhs._brain; // Deep copy
-		std::cout << "Cat assigned" << std::endl;
+		std::cout << "Dog assigned." << std::endl;
 	}
 	return *this;
 }
 
-Cat::~Cat() {
+Dog::~Dog() {
 	delete _brain;
-	std::cout << "Cat destroyed." << std::endl;
+	std::cout << "Dog destroyed." << std::endl;
 }
 
-Brain& Cat::getBrain() const {
+Brain& Dog::getBrain() const {
 	return *this->_brain;
 }
 
-void Cat::makeSound() const {
-	std::cout << "Meow!" << std::endl;
+void Dog::makeSound() const {
+	std::cout << "Woof!" << std::endl;
 }

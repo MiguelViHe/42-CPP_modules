@@ -6,10 +6,11 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 15:55:53 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/08/13 16:57:54 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/08/14 14:50:51 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
 #include <sstream>
 #include "Dog.hpp"
 #include "Brain.hpp"
@@ -30,8 +31,7 @@ Dog::Dog(const Dog& other) : Animal(other), _brain(new Brain(*other._brain)) {
 Dog& Dog::operator=(const Dog& rhs) {
 	if (this != &rhs) {
 		Animal::operator=(rhs);
-		delete this->_brain;
-		this->_brain = new Brain(*rhs._brain); // Deep copy
+		*this->_brain = *rhs._brain; // Deep copy
 		std::cout << "Dog assigned." << std::endl;
 	}
 	return *this;

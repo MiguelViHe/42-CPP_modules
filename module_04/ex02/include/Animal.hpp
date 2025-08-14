@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 15:37:45 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/08/14 14:46:38 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/08/14 15:01:33 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,24 @@
 
 class Animal {
 public:
-    Animal();
-    Animal(const std::string& type);
-    Animal(const Animal& other);
-    Animal& operator=(const Animal& other);
-    virtual ~Animal(); //Tiene que ser virtual porque se va a borrar a través de un puntero a Animal que apunta a una clase derivada (Dog o Cat)
+	Animal();
+	Animal(const std::string& type);
+	Animal(const Animal& other);
+	Animal& operator=(const Animal& other);
+	virtual ~Animal(); //Tiene que ser virtual porque se va a borrar a través de un puntero a Animal que apunta a una clase derivada (Dog o Cat)
 
-    std::string getType() const;
+	std::string getType() const;
 
-    /*
-    Animal* a = new Dog();
-    a->makeSound();
-    
-    virtual ->Polimorfismo: el método correcto se elige en tiempo de ejecución según el objeto real.
-    Sin virtual -> Llamada estática: se usa siempre el método de la clase base, incluso si el objeto real es de una clase derivada.*/
-    virtual void makeSound() const; 
+	/*
+	Animal* a = new Dog();
+	a->makeSound();
+	
+	virtual ->Polimorfismo: el método correcto se elige en tiempo de ejecución según el objeto real.
+	Sin virtual -> Llamada estática: se usa siempre el método de la clase base, incluso si el objeto real es de una clase derivada.*/
+	virtual void makeSound() const = 0; //Indica que este método debe ser implementado en las clases derivadas obligatoriamente.
 
 protected:
-    std::string _type;
+	std::string _type;
 };
 
 #endif

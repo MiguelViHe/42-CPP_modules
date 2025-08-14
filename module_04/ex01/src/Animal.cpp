@@ -6,10 +6,11 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 15:43:22 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/08/13 16:52:18 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/08/14 14:50:37 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
 #include "Animal.hpp"
 
 Animal::Animal() : _type("Unknown") {
@@ -20,8 +21,7 @@ Animal::Animal(const std::string& type) : _type(type) {
 	std::cout << "Animal created" << std::endl;
 }
 
-Animal::Animal(const Animal& other) {
-	this->_type = other._type;
+Animal::Animal(const Animal& other) : _type(other._type) {
 	std::cout << "Animal copied" << std::endl;
 }
 
@@ -35,10 +35,6 @@ Animal& Animal::operator=(const Animal& other) {
 
 Animal::~Animal() {
 	std::cout << "Animal destroyed." << std::endl;
-}
-
-void Animal::setType(const std::string& type) {
-	_type = type;
 }
 
 std::string Animal::getType() const {

@@ -6,24 +6,23 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 10:53:24 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/08/13 10:56:10 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/08/14 14:47:04 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WRONGANIMAL_HPP
 #define WRONGANIMAL_HPP
 
-#include <iostream>
 #include <string>
 
 class WrongAnimal {
 public:
     WrongAnimal();
+    WrongAnimal(const std::string& type);
     WrongAnimal(const WrongAnimal& other);
     WrongAnimal& operator=(const WrongAnimal& other);
     virtual ~WrongAnimal();
 
-    void setType(const std::string& type);
     std::string getType() const;
 
     /*

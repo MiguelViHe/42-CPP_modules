@@ -6,10 +6,11 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 10:59:48 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/08/14 11:43:35 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/08/14 14:51:03 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
 #include <sstream>
 #include "Brain.hpp"
 #include "WrongCat.hpp"
@@ -30,8 +31,7 @@ WrongCat::WrongCat(const WrongCat& other) : WrongAnimal(other), _brain(new Brain
 WrongCat& WrongCat::operator=(const WrongCat& rhs) {
 	if (this != &rhs) {
 		WrongAnimal::operator=(rhs);
-		delete this->_brain;
-		this->_brain = new Brain(*rhs._brain); // Deep copy
+		*this->_brain = *rhs._brain; // Deep copy
 		std::cout << "WrongCat assigned" << std::endl;
 	}
 	return *this;

@@ -6,14 +6,14 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 15:55:39 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/08/12 16:37:32 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/08/14 14:48:14 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
+#include <iostream>
 
-Cat::Cat() : Animal() {
-	this->_type = "Cat";
+Cat::Cat() : Animal("Cat") {
 	std::cout << "Cat created" << std::endl;
 }
 
@@ -22,8 +22,10 @@ Cat::Cat(const Cat& other) : Animal(other) {
 }
 
 Cat& Cat::operator=(const Cat& rhs) {
-	Animal::operator=(rhs);
-	std::cout << "Cat assigned" << std::endl;
+	if (this != &rhs) {
+		Animal::operator=(rhs);
+		std::cout << "Cat assigned" << std::endl;
+	}
 	return *this;
 }
 

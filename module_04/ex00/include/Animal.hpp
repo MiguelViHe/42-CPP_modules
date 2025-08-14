@@ -6,24 +6,23 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 15:37:45 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/08/13 10:52:06 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/08/14 14:46:47 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ANIMAL_HPP
 #define ANIMAL_HPP
 
-#include <iostream>
 #include <string>
 
 class Animal {
 public:
     Animal();
+    Animal(const std::string& type);
     Animal(const Animal& other);
     Animal& operator=(const Animal& other);
     virtual ~Animal();
 
-    void setType(const std::string& type);
     std::string getType() const;
 
     /*

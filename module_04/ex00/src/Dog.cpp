@@ -6,14 +6,14 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 15:55:53 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/08/13 10:44:32 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/08/14 14:48:21 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
+#include <iostream>
 
-Dog::Dog() : Animal() {
-    this->_type = "Dog";
+Dog::Dog() : Animal("Dog") {
     std::cout << "Dog created" << std::endl;
 }
 
@@ -22,8 +22,10 @@ Dog::Dog(const Dog& other) : Animal(other) {
 }
 
 Dog& Dog::operator=(const Dog& other) {
-    Animal::operator=(other);
-    std::cout << "Dog assigned." << std::endl;
+    if (this != &other) {
+        Animal::operator=(other);
+        std::cout << "Dog assigned." << std::endl;
+    }
     return *this;
 }
 

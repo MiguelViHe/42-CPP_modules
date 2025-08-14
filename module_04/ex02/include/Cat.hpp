@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/12 15:40:24 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/08/14 14:50:17 by mvidal-h         ###   ########.fr       */
+/*   Created: 2025/08/12 15:40:33 by mvidal-h          #+#    #+#             */
+/*   Updated: 2025/08/14 15:09:16 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#ifndef CAT_HPP
+#define CAT_HPP
 
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-class Dog : public Animal {
+class Cat : public Animal {
 public:
-	Dog();
-	Dog(const Dog& other);
-	Dog& operator=(const Dog& other);
-	~Dog();
+	Cat();
+	Cat(const Cat& other);
+	Cat& operator=(const Cat& other);
+	~Cat();
 
 	Brain& getBrain() const;
 
-	void makeSound() const;
-	
+	void makeSound() const; //COMENTAR ESTO PARA COMPROBAR QUE UNA CLASE DERIVADA DE UNA ABSTRACTA ESTA OBLIGADA A IMPLEMENTAR SUS METODOS VIRTUALES PUROS
 
 private:
 	Brain* _brain;
