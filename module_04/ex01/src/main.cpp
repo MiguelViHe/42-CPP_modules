@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/13 10:03:08 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/08/14 12:10:43 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/08/14 13:03:16 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,13 @@ void printIdeasWrong(const WrongAnimal& animal)
 
 int main(void)
 {
+	{
+		const Animal* j = new Dog();
+		const Animal* i = new Cat();
+		delete j;//should not create a leak
+		delete i;
+	}
+	std::cout << std::endl;
 	{
 		const int SIZE = 6;
 		Animal* animals[SIZE];
