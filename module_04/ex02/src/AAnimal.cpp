@@ -1,42 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 15:43:22 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/08/14 14:52:37 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/08/14 15:17:44 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 
-Animal::Animal() : _type("Unknown") {
-	std::cout << "Animal created" << std::endl;
+AAnimal::AAnimal() : _type("Unknown") {
+	std::cout << "AAnimal created" << std::endl;
 }
 
-Animal::Animal(const std::string& type) : _type(type) {
-	std::cout << "Animal created" << std::endl;
+AAnimal::AAnimal(const std::string& type) : _type(type) {
+	std::cout << "AAnimal created" << std::endl;
 }
 
-Animal::Animal(const Animal& other) : _type(other._type) {
-	std::cout << "Animal copied" << std::endl;
+AAnimal::AAnimal(const AAnimal& other) : _type(other._type) {
+	std::cout << "AAnimal copied" << std::endl;
 }
 
-Animal& Animal::operator=(const Animal& other) {
+AAnimal& AAnimal::operator=(const AAnimal& other) {
 	if (this != &other) {
 		this->_type = other._type;
-		std::cout << "Animal assigned" << std::endl;
+		std::cout << "AAnimal assigned" << std::endl;
 	}
 	return *this;
 }
 
-Animal::~Animal() {
-	std::cout << "Animal destroyed." << std::endl;
+AAnimal::~AAnimal() {
+	std::cout << "AAnimal destroyed." << std::endl;
 }
 
-std::string Animal::getType() const {
+std::string AAnimal::getType() const {
 	return _type;
 }

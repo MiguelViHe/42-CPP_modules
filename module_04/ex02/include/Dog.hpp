@@ -6,17 +6,17 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 15:40:24 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/08/14 14:52:19 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/08/14 15:22:23 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DOG_HPP
 #define DOG_HPP
 
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Brain.hpp"
 
-class Dog : public Animal {
+class Dog : public AAnimal {
 public:
 	Dog();
 	Dog(const Dog& other);

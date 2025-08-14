@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AAnimal.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 15:37:45 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/08/14 15:01:33 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/08/14 15:23:30 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef AANIMAL_HPP
+#define AANIMAL_HPP
 
 #include <string>
 
-class Animal {
+class AAnimal {
 public:
-	Animal();
-	Animal(const std::string& type);
-	Animal(const Animal& other);
-	Animal& operator=(const Animal& other);
-	virtual ~Animal(); //Tiene que ser virtual porque se va a borrar a través de un puntero a Animal que apunta a una clase derivada (Dog o Cat)
+	AAnimal();
+	AAnimal(const std::string& type);
+	AAnimal(const AAnimal& other);
+	AAnimal& operator=(const AAnimal& other);
+	virtual ~AAnimal(); //Tiene que ser virtual porque se va a borrar a través de un puntero a Animal que apunta a una clase derivada (Dog o Cat)
 
 	std::string getType() const;
 
 	/*
-	Animal* a = new Dog();
+	AAnimal* a = new Dog();
 	a->makeSound();
 	
 	virtual ->Polimorfismo: el método correcto se elige en tiempo de ejecución según el objeto real.

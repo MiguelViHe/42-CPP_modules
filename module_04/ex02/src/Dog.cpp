@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 15:55:53 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/08/14 14:52:48 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/08/14 15:45:01 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "Dog.hpp"
 #include "Brain.hpp"
 
-Dog::Dog() : Animal("Dog"), _brain(new Brain()) {
+Dog::Dog() : AAnimal("Dog"), _brain(new Brain()) {
 	for (int i = 0; i < 100; ++i) {
 		std::ostringstream oss;
 		oss << "Idea " << i << " from Dog";
@@ -24,13 +24,13 @@ Dog::Dog() : Animal("Dog"), _brain(new Brain()) {
 	std::cout << "Dog created" << std::endl;
 }
 
-Dog::Dog(const Dog& other) : Animal(other), _brain(new Brain(*other._brain)) {
+Dog::Dog(const Dog& other) : AAnimal(other), _brain(new Brain(*other._brain)) {
 	std::cout << "Dog copied." << std::endl;
 }
 
 Dog& Dog::operator=(const Dog& rhs) {
 	if (this != &rhs) {
-		Animal::operator=(rhs);
+		AAnimal::operator=(rhs);
 		*this->_brain = *rhs._brain; // Deep copy
 		std::cout << "Dog assigned." << std::endl;
 	}
