@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 12:54:59 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/08/18 12:59:46 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/08/18 15:33:37 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ class MateriaSource : public IMateriaSource
 
 		void learnMateria(AMateria* m);
 		AMateria* createMateria(std::string const & type);
+		// For testing purposes:
+		void printMaterias() const;
 
 	private:
 		AMateria* _materia[4];

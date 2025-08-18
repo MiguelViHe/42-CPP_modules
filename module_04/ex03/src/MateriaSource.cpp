@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 12:46:53 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/08/18 15:22:47 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/08/18 16:25:39 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,20 +56,29 @@ void MateriaSource::learnMateria(AMateria* m) {
 	for (int i = 0; i < 4; i++) {
 		if (!this->_materia[i]) {
 			this->_materia[i] = m;
-			std::cout << "Materia learned in slot " << i << std::endl;
 			return;
 		}
 	}
-	std::cout << "Materia source full" << std::endl;
+	std::cout << "MateriaSource is full, cannot learn " << m->getType() << std::endl;
+	delete m; // Prevent memory leak if the materia cannot be learned
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type) {
 	for (int i = 0; i < 4; i++) {
 		if (this->_materia[i] && this->_materia[i]->getType() == type) {
-			std::cout << "Materia created from slot " << i << std::endl;
 			return this->_materia[i]->clone();
 		}
 	}
-	std::cout << "Materia not found" << std::endl;
 	return NULL;
+}
+
+// For testing purposes
+void MateriaSource::printMaterias() const {
+	std::cout << "Materia Source:" << std::endl;
+	for (int i = 0; i < 4; i++) {
+		if (this->_materia[i])
+			std::cout << "Slot " << i << ": " << this->_materia[i]->getType() << std::endl;
+		else
+			std::cout << "Slot " << i << ": empty" << std::endl;
+	}
 }

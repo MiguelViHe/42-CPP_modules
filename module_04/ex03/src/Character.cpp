@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/18 10:05:25 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/08/18 15:19:47 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/08/18 16:43:19 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,11 +103,11 @@ void Character::equip(AMateria* m) {
 	for (int i = 0; i < 4; i++) {
 		if (!this->_inventory[i]) {
 			this->_inventory[i] = m;
-			std::cout << "Materia equipped in slot " << i << std::endl;
 			return;
 		}
 	}
-	std::cout << "Inventory full" << std::endl;
+	//I dont delete here because i'm not the owner of the materia.
+	std::cout << "Inventory is full, cannot equip " << m->getType() << std::endl;
 }
 
 void Character::unequip(int idx){
@@ -121,9 +121,6 @@ void Character::unequip(int idx){
 		newNode->next = _floor;
 		_floor = newNode;
 		this->_inventory[idx] = NULL;
-		std::cout << "Materia unequipped from slot " << idx << std::endl;
-	} else {
-		std::cout << "No Materia equipped in slot " << idx << std::endl;
 	}
 }
 
@@ -134,7 +131,28 @@ void Character::use(int idx, ICharacter& target) {
 	}
 	if (this->_inventory[idx]) {
 		this->_inventory[idx]->use(target);
-	} else {
-		std::cout << "No Materia equipped in slot " << idx << std::endl;
+	}
+	else {
+		std::cout << "No materia equipped in slot " << idx << std::endl;
+	}
+}
+
+ // For testing purposes:
+void Character::printInventory() const {
+	std::cout << "Inventory of " << _name << ":" << std::endl;
+	for (int i = 0; i < 4; i++) {
+		if (_inventory[i])
+			std::cout << "Slot " << i << ": " << _inventory[i]->getType() << std::endl;
+		else
+			std::cout << "Slot " << i << ": empty" << std::endl;
+	}
+}
+
+void Character::printFloor() const {
+	std::cout << "Floor of " << _name << ":" << std::endl;
+	FloorNode* current = _floor;
+	while (current) {
+		std::cout << " - " << current->materia->getType() << std::endl;
+		current = current->next;
 	}
 }
