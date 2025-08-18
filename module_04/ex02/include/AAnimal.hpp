@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 15:37:45 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/08/14 15:23:30 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/08/14 16:07:14 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
 	AAnimal& operator=(const AAnimal& other);
 	virtual ~AAnimal(); //Tiene que ser virtual porque se va a borrar a través de un puntero a Animal que apunta a una clase derivada (Dog o Cat)
 
-	std::string getType() const;
+	const std::string& getType() const;
 
 	/*
 	AAnimal* a = new Dog();

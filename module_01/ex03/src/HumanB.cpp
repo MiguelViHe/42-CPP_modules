@@ -6,14 +6,14 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 13:01:27 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/08/05 14:39:50 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/08/18 10:25:11 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
 #include <iostream>
 
-HumanB::HumanB(const std::string& name) : _name(name), _weapon(nullptr){}
+HumanB::HumanB(const std::string& name) : _name(name), _weapon(NULL){}
 HumanB::HumanB(const std::string& name, Weapon& w) : _name(name), _weapon(&w){}
 HumanB::~HumanB(void)
 {

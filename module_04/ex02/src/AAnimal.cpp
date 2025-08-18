@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 15:43:22 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/08/14 15:17:44 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/08/14 16:07:24 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,6 @@ AAnimal::~AAnimal() {
 	std::cout << "AAnimal destroyed." << std::endl;
 }
 
-std::string AAnimal::getType() const {
+const std::string& AAnimal::getType() const {
 	return _type;
 }

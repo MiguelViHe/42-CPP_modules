@@ -6,12 +6,12 @@
 #    By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/14 10:02:29 by mvidal-h          #+#    #+#              #
-#    Updated: 2025/08/14 15:51:29 by mvidal-h         ###   ########.fr        #
+#    Updated: 2025/08/18 14:15:40 by mvidal-h         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	a.out
-EXERCISE	=	ex02
+EXERCISE	=	ex03
 
 CC			=	c++
 CPPFLAGS		=	-Wall -Werror -Wextra -std=c++98 #-fsanitize=address
@@ -32,12 +32,11 @@ CUT			=	\033[K
 
 #source files
 SRC_FILES	=	main.cpp \
-				AAnimal.cpp \
-				Cat.cpp \
-				Dog.cpp \
-				WrongAnimal.cpp \
-				WrongCat.cpp \
-				Brain.cpp
+				MateriaSource.cpp \
+				AMateria.cpp \
+				Character.cpp \
+				Cure.cpp \
+				Ice.cpp
 
 OBJ_FILES	=	$(SRC_FILES:.cpp=.o)
 

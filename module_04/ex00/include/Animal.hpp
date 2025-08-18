@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 15:37:45 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/08/14 14:46:47 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/08/14 15:58:25 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
     Animal& operator=(const Animal& other);
     virtual ~Animal();
 
-    std::string getType() const;
+    const std::string& getType() const;
 
     /*
     Animal* a = new Dog();
