@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Form.hpp                                           :+:      :+:    :+:   */
+/*   AForm.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 17:36:48 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/09/04 12:42:10 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/09/04 17:24:28 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FORM_HPP
-#define FORM_HPP
+#ifndef AFORM_HPP
+#define AFORM_HPP
 
 #include <string>
 #include <stdexcept>
@@ -19,13 +19,13 @@
 
 class Bureaucrat;
 
-class Form {
+class AForm {
 public:
-	Form();
-	Form(const std::string &name, const int &gradeSign, const int &gradeExec);
-	Form(const Form& other);
-	Form& operator=(const Form& other);
-	~Form();
+	AForm();
+	AForm(const std::string &name, const int &gradeSign, const int &gradeExec);
+	AForm(const AForm& other);
+	AForm& operator=(const AForm& other);
+	virtual ~AForm();
 
 	std::string getName() const;
 	int getGradeSign() const;
@@ -33,12 +33,13 @@ public:
 	bool isSigned() const;
 
 	void beSigned(const Bureaucrat& bureaucrat);
+	void execute(const Bureaucrat& executor) const;
 
 	class GradeTooHighException : public std::exception
 	{
 		public:
 			const char* what() const throw() {
-				return "Grade is too high";
+				return "Exception: Grade is too high";
 			}
 	};
 
@@ -46,9 +47,20 @@ public:
 	{
 		public:
 			const char* what() const throw() {
-				return "Grade is too low";
+				return "Exception: Grade is too low";
 			}
 	};
+
+	class FormNotSignedException : public std::exception
+	{
+		public:
+			const char* what() const throw() {
+				return "Exception: Form is not signed";
+			}
+	};
+
+protected:
+	virtual void doAction(const Bureaucrat& executor) const = 0; //polimorfismo y abstracta
 
 private:
 	const std::string	_name;
@@ -57,6 +69,6 @@ private:
 	const int			_gradeExec;
 };
 
-std::ostream& operator<<(std::ostream& os, const Form& form);
+std::ostream& operator<<(std::ostream& os, const AForm& form);
 
-#endif // FORM_HPP
+#endif // AFORM_HPP
