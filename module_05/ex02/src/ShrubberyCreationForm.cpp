@@ -6,13 +6,16 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 16:17:49 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/09/04 17:50:57 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/09/05 11:56:21 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 #include <iostream>
 #include <fstream>
+
+const int ShrubberyCreationForm::_signRequired = 145;
+const int ShrubberyCreationForm::_execRequired = 137;
 
 ShrubberyCreationForm::ShrubberyCreationForm()
 : AForm("ShrubberyCreationForm", _signRequired, _execRequired), _target("none")
@@ -63,17 +66,18 @@ void ShrubberyCreationForm::doAction(const Bureaucrat& executor) const
 		file.exceptions(std::ofstream::failbit | std::ofstream::badbit);
 		file.open(fileName.c_str(), std::ios::out | std::ios::app);
 		file
-		<< "          *" << std::endl
-		<< "         ***" << std::endl
-		<< "        *****" << std::endl
-		<< "       *******" << std::endl
-		<< "      *********" << std::endl
-		<< "     ***********" << std::endl
-		<< "    *************" << std::endl
-		<< "   ***************" << std::endl
-		<< "          ||       " << std::endl
-		<< "          ||        " << std::endl;
-		std::cout << "PLANTED BY: " << executor.getName() << std::endl;
+		<< "          *          " << std::endl
+		<< "         ***         " << std::endl
+		<< "        *****        " << std::endl
+		<< "       *******       " << std::endl
+		<< "      *********      " << std::endl
+		<< "     ***********     " << std::endl
+		<< "    *************    " << std::endl
+		<< "   ***************   " << std::endl
+		<< "         |||         " << std::endl
+		<< "         |||         " << std::endl
+		<< "PLANTED BY: " << executor.getName() << std::endl;
+		std::cout << "Correctly planted Shrubbery in " << fileName << std::endl;
 	}
 	catch(std::ofstream::failure& e)
 	{

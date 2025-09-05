@@ -6,7 +6,7 @@
 #    By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/14 10:02:29 by mvidal-h          #+#    #+#              #
-#    Updated: 2025/09/04 12:27:40 by mvidal-h         ###   ########.fr        #
+#    Updated: 2025/09/05 11:57:51 by mvidal-h         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,10 @@ CUT			=	\033[K
 #source files
 SRC_FILES	=	main.cpp \
 				Bureaucrat.cpp \
-				Form.cpp
+				AForm.cpp \
+				ShrubberyCreationForm.cpp \
+				RobotomyRequestForm.cpp \
+				PresidentialPardonForm.cpp
 
 #object files
 OBJ_FILES	=	$(SRC_FILES:.cpp=.o)
@@ -67,6 +70,10 @@ clean:
 	echo -e "$(BLUE)Deleting all objects from /$(EXERCISE)...$(RESET)"; else \
 	echo -e "No objects to remove from /$(EXERCISE)."; \
 	fi;
+	@if ls *_shrubbery 1>/dev/null 2>&1; then \
+		rm -f *_shrubbery; \
+		echo -e "$(BLUE)Deleting shrubbery files...$(RESET)"; \
+	fi
 
 #fclean rule
 fclean: clean

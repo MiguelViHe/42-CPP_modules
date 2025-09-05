@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/04 17:42:41 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/09/04 17:54:03 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/09/05 11:46:43 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ public:
 	std::string getTarget() const;
 
 protected:
-	static const int	_signRequired = 25;
-	static const int	_execRequired = 5;
+	static const int	_signRequired;
+	static const int	_execRequired;
 	virtual void doAction(const Bureaucrat& executor) const;
 
 private:
