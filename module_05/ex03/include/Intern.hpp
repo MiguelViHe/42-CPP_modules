@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 15:12:00 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/09/08 11:36:07 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/09/09 13:25:18 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,7 @@ public:
 	class UnknownFormException : public std::exception
 	{
 		public:
-			const char * what() const throw() {
-				return "Unknown form type";
-			}
+			virtual const char * what() const throw();
 	};
 
 private:

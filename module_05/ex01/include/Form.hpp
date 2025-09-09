@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 17:36:48 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/09/04 12:42:10 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/09/09 13:10:25 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,13 @@ public:
 	class GradeTooHighException : public std::exception
 	{
 		public:
-			const char* what() const throw() {
-				return "Grade is too high";
-			}
+			virtual const char* what() const throw();
 	};
 
 	class GradeTooLowException : public std::exception
 	{
 		public:
-			const char* what() const throw() {
-				return "Grade is too low";
-			}
+			virtual const char* what() const throw();
 	};
 
 private:

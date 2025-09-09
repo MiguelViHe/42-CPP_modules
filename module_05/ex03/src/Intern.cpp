@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 15:11:56 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/09/08 11:31:55 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/09/09 13:28:19 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,11 @@ AForm* Intern::createRobotomyRequestForm(const std::string& target) {
 
 AForm* Intern::createPresidentialPardonForm(const std::string& target) {
 	return (new PresidentialPardonForm(target));
+}
+
+const char* Intern::UnknownFormException::what() const throw()
+{
+	return "Unknown form type";
 }
 
 AForm* Intern::makeForm(const std::string& formName, const std::string& formTarget)
