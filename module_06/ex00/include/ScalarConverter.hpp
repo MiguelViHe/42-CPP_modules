@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 09:58:14 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/09/09 13:49:58 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/09/10 15:07:38 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,14 @@ private:
 	static bool isDoubleSpecial(const std::string& input);
 
 	// printers
-	static void printInt(int value);
-	static void printFloat(float value);
-	static void printDouble(double value);
-	static void printChar(char value);
+	static void printChar(const std::string& input);
+	static void printInt(const std::string& input);
+	static void printFloat(const std::string& input);
+	static void printDouble(const std::string& input);
+	static void printOutOfRange(void);
+	static void printOutFloatRange(const std::string& input);
+	static void printFloatSpecial(const std::string& input);
+	static void printDoubleSpecial(const std::string& input);
 
 public:
 	static void convert(const std::string& literal);

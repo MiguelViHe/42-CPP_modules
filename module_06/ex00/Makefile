@@ -6,11 +6,11 @@
 #    By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/14 10:02:29 by mvidal-h          #+#    #+#              #
-#    Updated: 2025/09/03 12:44:19 by mvidal-h         ###   ########.fr        #
+#    Updated: 2025/09/10 15:12:17 by mvidal-h         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=	a.out
+NAME		=	convert
 EXERCISE	=	ex00
 
 CC			=	c++
@@ -32,7 +32,9 @@ CUT			=	\033[K
 
 #source files
 SRC_FILES	=	main.cpp \
-				Bureaucrat.cpp
+				ScalarConverter.cpp \
+				ScalarConverter.printer.cpp \
+				ScalarConverter.checker.cpp
 
 OBJ_FILES	=	$(SRC_FILES:.cpp=.o)
 

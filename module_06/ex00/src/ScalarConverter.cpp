@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 09:59:23 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/09/09 13:53:43 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/09/10 10:00:23 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,21 @@ void ScalarConverter::convert(const std::string& literal)
 	type valorType;
 
 	valorType = parse(literal);
-	if (valorType == ERROR)
+	switch (valorType)
+	{
+	case CHAR:
+		printChar(literal);
+		break;
+	case INT:
+		printInt(literal);
+		break;
+	case DOUBLE:
+		printDouble(literal);
+		break;
+	case FLOAT:
+		printFloat(literal);
+		break;
+	default:
 		throw InvalidInputException();
-	//seguir aqui
+	}
 }
