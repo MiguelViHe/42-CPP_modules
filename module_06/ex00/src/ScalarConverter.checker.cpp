@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 11:30:55 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/09/09 13:52:53 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/09/10 17:07:07 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,8 @@ bool ScalarConverter::isChar(const std::string& input)
 	if (input.empty())
 		return (false);
 	if (input.length() != 1)
+		return (false);
+	if (isdigit(input[0]))
 		return (false);
 	return (true);
 }
