@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/10 10:12:28 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/09/10 16:26:15 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/09/10 17:01:44 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@
 void ScalarConverter::printChar(const std::string& input)
 {
 	char c = input[0];
+	if (isdigit(c)) // Si el char en un numero ('0' a '9'), lo convertimos a su valor numerico para que coindica con el ejemplo
+		c -= '0';
 	if (!isprint(static_cast<unsigned char>(c)))
 		std::cout << "char: Non displayable" << std::endl;
 	else
