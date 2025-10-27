@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   C.hpp                                              :+:      :+:    :+:   */
+/*   min.template.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/27 11:43:37 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/10/27 16:42:11 by mvidal-h         ###   ########.fr       */
+/*   Created: 2025/10/27 17:14:24 by mvidal-h          #+#    #+#             */
+/*   Updated: 2025/10/27 17:41:25 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef C_HPP
-#define C_HPP
+#ifndef MIN_TEMPLATE_HPP
+#define MIN_TEMPLATE_HPP
 
-#include "Base.hpp"
-
-class C : public Base {
-public:
-	~C();
-};
+template <typename T>
+T min(T arg1, T arg2) {
+	return ((arg2 <= arg1) ? arg2 : arg1);
+}
 
 #endif

@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   C.hpp                                              :+:      :+:    :+:   */
+/*   max.template.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/27 11:43:37 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/10/27 16:42:11 by mvidal-h         ###   ########.fr       */
+/*   Created: 2025/10/27 17:14:39 by mvidal-h          #+#    #+#             */
+/*   Updated: 2025/10/27 17:41:35 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef C_HPP
-#define C_HPP
+#ifndef MAX_TEMPLATE_HPP
+#define MAX_TEMPLATE_HPP
 
-#include "Base.hpp"
-
-class C : public Base {
-public:
-	~C();
-};
+template <typename T>
+T max(T arg1, T arg2) {
+	return ((arg2 >= arg1) ? arg2 : arg1);
+}
 
 #endif
