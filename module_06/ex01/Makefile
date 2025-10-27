@@ -6,7 +6,7 @@
 #    By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/14 10:02:29 by mvidal-h          #+#    #+#              #
-#    Updated: 2025/10/24 16:40:18 by mvidal-h         ###   ########.fr        #
+#    Updated: 2025/10/27 10:28:36 by mvidal-h         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,10 +32,9 @@ CUT			=	\033[K
 
 #source files
 SRC_FILES	=	main.cpp \
-				ScalarConverter.cpp \
-				ScalarConverter.printer.cpp \
-				ScalarConverter.checker.cpp
+				Serializer.cpp
 
+#object files
 OBJ_FILES	=	$(SRC_FILES:.cpp=.o)
 
 #paths
