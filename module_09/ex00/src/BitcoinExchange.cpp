@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 13:21:08 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/11/11 19:33:08 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/11/12 17:18:02 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <sstream> // for std::stringstream
 #include <cstring> // for std::memset
 #include <algorithm>
+#include "trim.hpp"
 
 BitcoinExchange::BitcoinExchange() {
 	loadDatabase();
@@ -88,7 +89,9 @@ void	BitcoinExchange::processInputFile(const std::string &filename) const
 		std::istringstream iss(line);
 		std::string date, value_str;
 		std::getline(iss, date, '|');
-		std::getline(iss, value_str); //aqui falla isvaliddate
+		std::getline(iss, value_str);
+		trim(date);
+		trim(value_str);
 		if (date.empty() || value_str.empty() || !isValidDate(date))
 		{
 			std::cerr << "Error: bad input => " << line << std::endl;
@@ -137,8 +140,6 @@ bool BitcoinExchange::isValidDate(const std::string& date) const
 	std::tm original_tm = tm;
 	if (std::mktime(&tm) == -1) // Normaliza la estructura tm ajustandola con desbordes (ejemplo 32 de enero pasa a 1 de febrero). Devuelve -1 si la fecha es invalida por ejemplo año < 1900
 		return false;
-	// std::cout << "Debug: N date - Year: " << (tm.tm_year + 1900) << ", Month: " << (tm.tm_mon + 1) << ", Day: " << tm.tm_mday << std::endl;
-	// std::cout << "Debug: O date - Year: " << (original_tm.tm_year + 1900) << ", Month: " << (original_tm.tm_mon + 1) << ", Day: " << original_tm.tm_mday << std::endl;
 	if (tm.tm_year != original_tm.tm_year || tm.tm_mon != original_tm.tm_mon || tm.tm_mday != original_tm.tm_mday)
 		return false;
 	return true;
@@ -152,8 +153,10 @@ bool BitcoinExchange::isValidValue(const std::string& str, double& value) const
 	// Checking for invalid characters
 	int dots = 0;
 	int digits = 0;
+	int negative = 0;
 	for (size_t i = 0; i < str.size(); ++i)
 	{
+		
 		if (str[i] == '.')
 		{
 			dots++;
@@ -193,7 +196,7 @@ void	BitcoinExchange::print_output(const std::string &key, const double &value) 
 {
 	double rate = getRateForDate(key);
 	double result = rate * value;
-	std::cout << key << "=> " << value << " = " << result << std::endl;
+	std::cout << key << " => " << value << " = " << result << std::endl;
 }
 
 const char* BitcoinExchange::HeaderException::what() const throw()

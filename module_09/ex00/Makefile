@@ -6,7 +6,7 @@
 #    By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/14 10:02:29 by mvidal-h          #+#    #+#              #
-#    Updated: 2025/11/05 17:13:36 by mvidal-h         ###   ########.fr        #
+#    Updated: 2025/11/12 16:47:09 by mvidal-h         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,8 @@ CUT			=	\033[K
 
 #source files
 SRC_FILES	=	main.cpp \
-				BitcoinExchange.cpp
+				BitcoinExchange.cpp \
+				trim.cpp
 
 #object files
 OBJ_FILES	=	$(SRC_FILES:.cpp=.o)
