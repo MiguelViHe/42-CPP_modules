@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 13:21:08 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/11/12 17:18:02 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/11/13 10:51:23 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,8 +153,10 @@ bool BitcoinExchange::isValidValue(const std::string& str, double& value) const
 	// Checking for invalid characters
 	int dots = 0;
 	int digits = 0;
-	int negative = 0;
-	for (size_t i = 0; i < str.size(); ++i)
+	size_t negative = 0;
+	if (str[0] == '-')
+		negative++;
+	for (size_t i = negative ; i < str.size(); ++i)
 	{
 		
 		if (str[i] == '.')
