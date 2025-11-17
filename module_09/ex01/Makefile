@@ -6,7 +6,7 @@
 #    By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/14 10:02:29 by mvidal-h          #+#    #+#              #
-#    Updated: 2025/11/17 14:11:52 by mvidal-h         ###   ########.fr        #
+#    Updated: 2025/11/17 17:02:32 by mvidal-h         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,8 @@ CUT			=	\033[K
 
 #source files
 SRC_FILES	=	main.cpp \
-				RPN.cpp
+				RPN.cpp \
+				SafeMath.cpp
 
 #object files
 OBJ_FILES	=	$(SRC_FILES:.cpp=.o)

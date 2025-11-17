@@ -6,11 +6,12 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 09:46:17 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/11/17 15:27:16 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/11/17 17:02:00 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RPN.hpp"
+#include "SafeMath.hpp"
 #include <iostream>
 #include <sstream>
 
@@ -63,10 +64,10 @@ void	RPN::applyOperator(std::string& token)
 	int	b = popSafe();
 	int	a = popSafe();
 	int	result;
-	if (token == "+") {result = a + b;}
-	else if (token == "-") {result = a - b;}
-	else if (token == "*") {result = a * b;}
-	else if (token == "/") {result = a / b;}
+	if (token == "+") {result = SafeMath::safeAdd(a, b);}
+	else if (token == "-") {result = SafeMath::safeSubtract(a, b);}
+	else if (token == "*") {result = SafeMath::safeMultiply(a, b);}
+	else if (token == "/") {result = SafeMath::safeDivide(a, b);}
 	else {throw NoValidElementException();}
 	_stack.push(result);
 }
