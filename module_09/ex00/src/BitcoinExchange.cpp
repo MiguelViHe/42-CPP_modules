@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 13:21:08 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/11/13 10:51:23 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/11/17 10:01:03 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,7 @@ BitcoinExchange::BitcoinExchange(const BitcoinExchange& other) : _rates_db(other
 BitcoinExchange& BitcoinExchange::operator=(const BitcoinExchange& other)
 {
 	if (this != &other)
-	{
 		_rates_db = other._rates_db;
-	}
 	return *this;
 }
 

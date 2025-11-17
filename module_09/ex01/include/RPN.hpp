@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 15:40:35 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/11/14 16:19:35 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/11/17 13:01:14 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,35 @@ class RPN
 		~RPN();
 
 		void	evaluate(const std::string& expression);
+
+		class NoValidElementException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+
+		class StackUnderFlowException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+
+		class NoUniqueResultException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+
 	private:
 		std::stack<int> _stack;
 
-		int	applyOperator(char op);
-
+		bool	isOperator(std::string& token) const;
+		bool	isDigit(std::string& token) const;
+		int		popSafe();
+		void	applyOperator(std::string& token);
+		void	applyDigit(std::string& token);
+		void	processToken(std::string& token);
+		void	checkResult();
 };
 
 #endif
