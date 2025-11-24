@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 17:19:15 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/11/24 12:53:17 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/11/24 15:44:10 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,6 +98,14 @@ void PmergeMe::movePairsVector(const std::vector<int>& source, std::vector<int>&
 		else
 			small.push_back(first);
 	}
+}
+
+//MERGING
+void	PmergeMe::mergeVectors(std::vector<int>& small, std::vector<int>& large)
+{
+	//CREAR LISTA JACOB
+	//IR COLONCANDO CON LOS INDICES DE JACOB
+	
 }
 
 /*SORTING*/

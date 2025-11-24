@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 17:19:12 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/11/24 13:03:59 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/11/24 15:38:48 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,12 @@ class PmergeMe
 		int		_argc;
 		char**	_argv;
 
+		// VECTORS
 		void	mergeVectors(std::vector<int>& small, std::vector<int>& large);
 		void	movePairsVector(const std::vector<int>& source, std::vector<int>& small, std::vector<int>& large);
 		void	sortVector(std::vector<int>& vec);
 		void	fillVector(std::vector<int>& vec);
+		// DEQUES
 		void	mergeDeques(std::deque<int>& small, std::deque<int>& large);
 		void	movePairsDeque(const std::deque<int>& source, std::deque<int>& small, std::deque<int>& large);
 		void	sortDeque(std::deque<int>& dq);
