@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 17:19:15 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/11/21 16:21:46 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/11/24 12:53:17 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 #include <iostream>
 #include <sstream>
 #include <climits>
-#include <vector>
-#include <deque>
 
 PmergeMe::PmergeMe(int argc, char** argv) : _argc(argc), _argv(argv) {}
 PmergeMe::PmergeMe(const PmergeMe& other) : _argc(other._argc), _argv(other._argv) {}
@@ -64,10 +62,9 @@ void	printVector(const std::vector<int>& vec)
 	std::cout << std::endl;
 }
 
-/*SORTING*/
-void	PmergeMe::sortVector()
+//FILLING VECTOR WITH ARGV
+void PmergeMe::fillVector(std::vector<int>& vec)
 {
-	std::vector<int> vec;
 	int number;
 	for (int i = 1; i < _argc; ++i)
 	{
@@ -75,7 +72,57 @@ void	PmergeMe::sortVector()
 		iss >> number;
 		vec.push_back(number);
 	}
+}
+
+//MOVING PAIRS TO SMALL AND LARGE VECTORS
+void PmergeMe::movePairsVector(const std::vector<int>& source, std::vector<int>& small, std::vector<int>& large)
+{
+	std::vector<int>::const_iterator it = source.begin();
+	while (it != source.end())
+	{
+		int first = *it++;
+		if (it != source.end())
+		{
+			int second = *it++;
+			if (first > second)
+			{
+				small.push_back(second);
+				large.push_back(first);
+			}
+			else
+			{
+				small.push_back(first);
+				large.push_back(second);
+			}
+		}
+		else
+			small.push_back(first);
+	}
+}
+
+/*SORTING*/
+void	PmergeMe::sortVector(std::vector<int>& vec)
+{
+	if (vec.size() <= 1)
+		return;
+
+	std::vector<int> small;
+	std::vector<int> large;
+
+	movePairsVector(vec, small, large);
+	sortVector(small);
+
 	printVector(vec);
+	printVector(small);
+	printVector(large);
+}
+
+void	PmergeMe:: sortWithVector()
+{
+	std::vector<int> vec;
+	//CONTAR TIEMPO
+	fillVector(vec);
+	sortVector(vec);
 }
 
 /***************
@@ -92,10 +139,9 @@ void	printDeque(const std::deque<int>& dq)
 	std::cout << std::endl;
 }
 
-//SORTING
-void	PmergeMe:: sortDeque()
+//FILLING DEQUE WITH ARGV
+void PmergeMe::fillDeque(std::deque<int>& dq)
 {
-	std::deque<int> dq;
 	int number;
 	for (int i = 1; i < _argc; ++i)
 	{
@@ -103,7 +149,57 @@ void	PmergeMe:: sortDeque()
 		iss >> number;
 		dq.push_back(number);
 	}
+}
+
+//MOVING PAIRS TO SMALL AND LARGE DEQUES
+void PmergeMe::movePairsDeque(const std::deque<int>& source, std::deque<int>& small, std::deque<int>& large)
+{
+	std::deque<int>::const_iterator it = source.begin();
+	while (it != source.end())
+	{
+		int first = *it++;
+		if (it != source.end())
+		{
+			int second = *it++;
+			if (first > second)
+			{
+				small.push_back(second);
+				large.push_back(first);
+			}
+			else
+			{
+				small.push_back(first);
+				large.push_back(second);
+			}
+		}
+		else
+			small.push_back(first);
+	}
+}
+
+//SORTING
+void	PmergeMe:: sortDeque(std::deque<int>& dq)
+{
+	if (dq.size() <= 1)
+		return;
+
+	std::deque<int> small;
+	std::deque<int> large;
+
+	movePairsDeque(dq, small, large);
+	sortDeque(small);
+
 	printDeque(dq);
+	printDeque(small);
+	printDeque(large);
+}
+
+void	PmergeMe:: sortWithDeque()
+{
+	std::deque<int> dq;
+	//CONTAR TIEMPO
+	fillDeque(dq);
+	sortDeque(dq);
 }
 
 /*EXCEPTION WHAT*/
