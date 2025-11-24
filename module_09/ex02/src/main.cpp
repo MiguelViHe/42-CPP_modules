@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 17:18:43 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/11/24 12:08:45 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/11/24 17:29:45 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	main(int argc, char** argv)
 	{
 		pmergeMe.validateArgv();
 		pmergeMe.sortWithVector();
-		pmergeMe.sortWithDeque();
+		// pmergeMe.sortWithDeque();
 	}
 	catch(const std::exception& e)
 	{

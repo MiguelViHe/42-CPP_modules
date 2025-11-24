@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 17:19:15 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/11/24 15:44:10 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/11/24 17:34:05 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,15 @@ void	PmergeMe::mergeVectors(std::vector<int>& small, std::vector<int>& large)
 {
 	//CREAR LISTA JACOB
 	//IR COLONCANDO CON LOS INDICES DE JACOB
-	
+	std::vector<int>::iterator 	spos;
+	std::vector<int>::iterator 	lpos;
+	int							value;
+	for (lpos = large.begin(); lpos != large.end(); ++lpos)
+	{
+		value = *lpos;
+		spos = std::lower_bound(small.begin(), small.end(), value);
+		small.insert(spos, value);
+	}
 }
 
 /*SORTING*/
@@ -119,10 +127,11 @@ void	PmergeMe::sortVector(std::vector<int>& vec)
 
 	movePairsVector(vec, small, large);
 	sortVector(small);
-
-	printVector(vec);
-	printVector(small);
-	printVector(large);
+	mergeVectors(small, large);
+	vec = small;
+	// printVector(vec);
+	// printVector(small);
+	// printVector(large);
 }
 
 void	PmergeMe:: sortWithVector()
@@ -131,6 +140,7 @@ void	PmergeMe:: sortWithVector()
 	//CONTAR TIEMPO
 	fillVector(vec);
 	sortVector(vec);
+	printVector(vec);
 }
 
 /***************
