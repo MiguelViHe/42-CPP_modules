@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 17:19:15 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/11/24 17:34:05 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/11/25 13:57:23 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,9 @@ void PmergeMe::movePairsVector(const std::vector<int>& source, std::vector<int>&
 //MERGING
 void	PmergeMe::mergeVectors(std::vector<int>& small, std::vector<int>& large)
 {
-	//CREAR LISTA JACOB
+	std::vector<int> jacob = generateJacobsthalOrder(large.size());
+	std::cout << "Jajob =";
+	printVector(jacob);
 	//IR COLONCANDO CON LOS INDICES DE JACOB
 	std::vector<int>::iterator 	spos;
 	std::vector<int>::iterator 	lpos;
@@ -141,6 +143,21 @@ void	PmergeMe:: sortWithVector()
 	fillVector(vec);
 	sortVector(vec);
 	printVector(vec);
+}
+
+std::vector<int>	PmergeMe::generateJacobsthalOrder(int n)
+{
+	std::vector<int> jacobsthal;
+	jacobsthal.push_back(0);
+	jacobsthal.push_back(1);
+	if (n <= 2)
+		return jacobsthal;
+	for (int i = 2; i <= n; ++i)
+	{
+		jacobsthal.push_back(jacobsthal[i - 1] + (2 * jacobsthal[i - 2]));
+		//J(n−1)+2J(n−2)
+	}
+	return jacobsthal;
 }
 
 /***************

@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 17:19:12 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/11/24 17:55:19 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/11/25 13:48:36 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ class PmergeMe
 		void	sortDeque(std::deque<int>& dq);
 		void	fillDeque(std::deque<int>& dq);
 		//JACOBSTHAL
-		// void	generateJacobsthal(/*tamaño de vector deque(large)?*/)
+		// (/*tamaño de vector deque(large)?*/)
+		std::vector<int>	generateJacobsthalOrder(int n);
 	
 		public:
 		PmergeMe(int argc, char** argv);
