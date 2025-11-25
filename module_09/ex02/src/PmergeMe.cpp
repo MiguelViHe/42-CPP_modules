@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 17:19:15 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/11/25 13:57:23 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/11/25 14:43:21 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,12 +128,11 @@ void	PmergeMe::sortVector(std::vector<int>& vec)
 	std::vector<int> large;
 
 	movePairsVector(vec, small, large);
+	std::cout << "small = "; printVector(small);
+	std::cout << "large = "; printVector(large);
 	sortVector(small);
 	mergeVectors(small, large);
 	vec = small;
-	// printVector(vec);
-	// printVector(small);
-	// printVector(large);
 }
 
 void	PmergeMe:: sortWithVector()
@@ -149,10 +148,12 @@ std::vector<int>	PmergeMe::generateJacobsthalOrder(int n)
 {
 	std::vector<int> jacobsthal;
 	jacobsthal.push_back(0);
+	if (n == 1)
+		return jacobsthal;
 	jacobsthal.push_back(1);
 	if (n <= 2)
 		return jacobsthal;
-	for (int i = 2; i <= n; ++i)
+	for (int i = 3; i <= n; ++i)
 	{
 		jacobsthal.push_back(jacobsthal[i - 1] + (2 * jacobsthal[i - 2]));
 		//J(n−1)+2J(n−2)
