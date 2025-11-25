@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 17:19:15 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/11/25 14:43:21 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/11/25 15:25:38 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,18 +104,19 @@ void PmergeMe::movePairsVector(const std::vector<int>& source, std::vector<int>&
 void	PmergeMe::mergeVectors(std::vector<int>& small, std::vector<int>& large)
 {
 	std::vector<int> jacob = generateJacobsthalOrder(large.size());
-	std::cout << "Jajob =";
-	printVector(jacob);
-	//IR COLONCANDO CON LOS INDICES DE JACOB
+	std::cout << "Jajob = "; printVector(jacob);
 	std::vector<int>::iterator 	spos;
+	std::vector<char> used(large.size(), 0); //Para llevar el control 
 	std::vector<int>::iterator 	lpos;
 	int							value;
-	for (lpos = large.begin(); lpos != large.end(); ++lpos)
-	{
+	
+	for (std::vector<size_t>::iterator it = jacob.begin(); it != jacob.end(); ++it) {
+    	size_t index = *it;
+		// usar index
+	}
 		value = *lpos;
 		spos = std::lower_bound(small.begin(), small.end(), value);
 		small.insert(spos, value);
-	}
 }
 
 /*SORTING*/
@@ -128,8 +129,8 @@ void	PmergeMe::sortVector(std::vector<int>& vec)
 	std::vector<int> large;
 
 	movePairsVector(vec, small, large);
-	std::cout << "small = "; printVector(small);
-	std::cout << "large = "; printVector(large);
+	// std::cout << "small = "; printVector(small);
+	// std::cout << "large = "; printVector(large);
 	sortVector(small);
 	mergeVectors(small, large);
 	vec = small;
@@ -153,11 +154,8 @@ std::vector<int>	PmergeMe::generateJacobsthalOrder(int n)
 	jacobsthal.push_back(1);
 	if (n <= 2)
 		return jacobsthal;
-	for (int i = 3; i <= n; ++i)
-	{
+	for (int i = 2; i < n; ++i)
 		jacobsthal.push_back(jacobsthal[i - 1] + (2 * jacobsthal[i - 2]));
-		//J(n−1)+2J(n−2)
-	}
 	return jacobsthal;
 }
 
