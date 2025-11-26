@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 17:19:12 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/11/25 13:48:36 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/11/26 18:21:41 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,15 @@ class PmergeMe
 		void	movePairsVector(const std::vector<int>& source, std::vector<int>& small, std::vector<int>& large);
 		void	sortVector(std::vector<int>& vec);
 		void	fillVector(std::vector<int>& vec);
+		//void	printVector(const std::vector<int>& vec);
+		void	printVector(const std::vector<int>& vec, std::string msg, bool full);
 		// DEQUES
 		void	mergeDeques(std::deque<int>& small, std::deque<int>& large);
 		void	movePairsDeque(const std::deque<int>& source, std::deque<int>& small, std::deque<int>& large);
 		void	sortDeque(std::deque<int>& dq);
 		void	fillDeque(std::deque<int>& dq);
+		void	printDeque(const std::deque<int>& dq);
 		//JACOBSTHAL
-		// (/*tamaño de vector deque(large)?*/)
 		std::vector<int>	generateJacobsthalOrder(int n);
 	
 		public:
@@ -44,8 +46,10 @@ class PmergeMe
 		~PmergeMe();
 		
 		void	validateArgv();
-		void	sortWithVector();
-		void	sortWithDeque();
+		double	sortWithVector();
+		double	sortWithDeque();
+		bool	isVectorSorted(const std::vector<int>& vec);
+		bool	isDequeSorted(const std::deque<int>& dq);
 
 		class PmergeMeException : public std::exception
 		{
