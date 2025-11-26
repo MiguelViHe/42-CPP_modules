@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 17:19:15 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/11/25 15:25:38 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/11/26 12:10:27 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,27 +96,41 @@ void PmergeMe::movePairsVector(const std::vector<int>& source, std::vector<int>&
 			}
 		}
 		else
-			small.push_back(first);
+			large.push_back(first);
 	}
 }
 
 //MERGING
-void	PmergeMe::mergeVectors(std::vector<int>& small, std::vector<int>& large)
+void	PmergeMe::mergeVectors(std::vector<int>& large, std::vector<int>& small)
 {
-	std::vector<int> jacob = generateJacobsthalOrder(large.size());
+	std::vector<int> jacob = generateJacobsthalOrder(small.size());
 	std::cout << "Jajob = "; printVector(jacob);
-	std::vector<int>::iterator 	spos;
-	std::vector<char> used(large.size(), 0); //Para llevar el control 
-	std::vector<int>::iterator 	lpos;
-	int							value;
+	std::vector<char> used(small.size(), 0); //Para llevar el control 
 	
-	for (std::vector<size_t>::iterator it = jacob.begin(); it != jacob.end(); ++it) {
-    	size_t index = *it;
-		// usar index
+	for (std::vector<int>::iterator it = jacob.begin(); it != jacob.end(); ++it) {
+		int index = *it;
+		if (index < jacob.size() && !used[index])
+		{
+			int value = small[index];
+			std::vector<int>::iterator spos = std::lower_bound(large.begin(), large.end(), value);
+			large.insert(spos, value);
+			used[index] = 1; //Marcar como usado
+			std::cout << "mergeando con jacob... " << value << std::endl;
+			std::cout << "jacob en proceso... = "; printVector(large);
+		}
 	}
-		value = *lpos;
-		spos = std::lower_bound(small.begin(), small.end(), value);
-		small.insert(spos, value);
+	// Insertar los elementos restantes
+	for (size_t i = 0; i < small.size(); ++i)
+	{
+		if (!used[i])
+		{
+			int value = small[i];
+			std::vector<int>::iterator lpos = std::lower_bound(large.begin(), large.end(), value);
+			large.insert(lpos, value);
+			std::cout << "mergeando restante... " << value << std::endl;
+			std::cout << "restante en proceso... "; printVector(large);
+		}
+	}
 }
 
 /*SORTING*/
@@ -129,11 +143,15 @@ void	PmergeMe::sortVector(std::vector<int>& vec)
 	std::vector<int> large;
 
 	movePairsVector(vec, small, large);
-	// std::cout << "small = "; printVector(small);
-	// std::cout << "large = "; printVector(large);
-	sortVector(small);
-	mergeVectors(small, large);
-	vec = small;
+	std::cout << "Original esta vuelta = "; printVector(vec);
+	std::cout << "large = "; printVector(large);
+	std::cout << "small = "; printVector(small);
+	sortVector(large);
+	std::cout << "Salida de recursividad = "; printVector(large);
+	std::cout << "a mergear: "; printVector(small);
+	mergeVectors(large, small);
+	vec = large;
+	std::cout << "Una vez mergeado = "; printVector(vec);
 }
 
 void	PmergeMe:: sortWithVector()
