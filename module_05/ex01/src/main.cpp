@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 12:30:50 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/09/09 13:12:25 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/11/27 17:49:05 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,37 +35,19 @@ int	main(void)
 			bureaucrat.signForm(formB);
 		}
 		std::cout << "-------------------" << std::endl;
-		// {
-		// 	Bureaucrat b3("Juan", 1);
-		// 	std::cout << b3 << std::endl;
-		// 	Form formD("FormD", 1, 1);
-		// 	Form formE(formD);
-		// 	std::cout << formD << std::endl;
-		// 	std::cout << formE << std::endl;
-		// 	b3.signForm(formD);
-		// 	b3.signForm(formE);
-		// 	std::cout << formD << std::endl;
-		// 	std::cout << formE << std::endl;
-		// }
-		// std::cout << "-------------------" << std::endl;
-		// {
-		// Bureaucrat b3("Pepe", 1);
-		// 	std::cout << b3 << std::endl;
-		// 	Form formF("FormF", 1, 1);
-		// 	Form formG("FormG", 42, 42);
-		// 	std::cout << formF << std::endl;
-		// 	std::cout << formG << std::endl;
-		// 	formF = formG;
-		// 	std::cout << formF << std::endl;
-		// 	std::cout << formG << std::endl;
-		// 	b3.signForm(formG);
-		// 	std::cout << formF << std::endl;
-		// 	std::cout << formG << std::endl;
-		// 	formF = formG;
-		// 	std::cout << formF << std::endl;
-		// 	std::cout << formG << std::endl;
-		// }
-		// std::cout << "-------------------" << std::endl;
+		{
+			Bureaucrat b3("Juan", 1);
+			std::cout << b3 << std::endl;
+			Form formD("FormD", 1, 1);
+			Form formE(formD);
+			std::cout << formD << std::endl;
+			std::cout << formE << std::endl;
+			b3.signForm(formD);
+			b3.signForm(formE);
+			std::cout << formD << std::endl;
+			std::cout << formE << std::endl;
+		}
+		std::cout << "-------------------" << std::endl;
 	}
 	catch(const std::exception& e)
 	{
