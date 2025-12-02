@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 11:42:13 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/09/09 13:24:23 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/12/02 11:56:31 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,8 +100,8 @@ void Bureaucrat::executeForm(const AForm& form) const
 {
 	try
 	{
-		std::cout << this->_name << " executed " << form.getName() << std::endl;
 		form.execute(*this); 
+		std::cout << this->_name << " executed " << form.getName() << std::endl;
 	}
 	catch(const std::exception& e)
 	{
