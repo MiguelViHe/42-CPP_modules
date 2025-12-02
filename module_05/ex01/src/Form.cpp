@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 17:36:37 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/09/09 13:10:47 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/12/02 11:48:55 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,10 +81,10 @@ std::ostream& operator<<(std::ostream& os, const Form& form)
 
 const char* Form::GradeTooHighException::what() const throw()
 {
-	return "Grade is too high";
+	return "Form grade is too high";
 }
 
 const char* Form::GradeTooLowException::what() const throw()
 {
-	return "Grade is too low";
+	return "Form grade is too low";
 }

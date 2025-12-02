@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/03 12:30:50 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/11/27 17:49:05 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/12/02 11:49:07 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,19 @@ int	main(void)
 			Bureaucrat b3("Juan", 1);
 			std::cout << b3 << std::endl;
 			Form formD("FormD", 1, 1);
+			Form formE(formD);
+			std::cout << formD << std::endl;
+			std::cout << formE << std::endl;
+			b3.signForm(formD);
+			b3.signForm(formE);
+			std::cout << formD << std::endl;
+			std::cout << formE << std::endl;
+		}
+		std::cout << "-------------------" << std::endl;
+		{
+			Bureaucrat b3("Juan", -1);
+			std::cout << b3 << std::endl;
+			Form formD("FormD", 178, 1);
 			Form formE(formD);
 			std::cout << formD << std::endl;
 			std::cout << formE << std::endl;
