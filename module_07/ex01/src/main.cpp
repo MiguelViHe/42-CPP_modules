@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 10:58:02 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/10/28 15:50:33 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/12/18 12:35:55 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	main(void) {
 	int const array4[] = {10, 20, 30, 40, 50};
 	iter(array4, 5, print<int>);
 	std::cout << std::endl;
-	// iter(array4, 5, increase<int>);
+	// iter(array4, 5, increase<int>); //Da error porque array4 es const y increase necesita un non-const reference
 	iter(array4, 5, print<int>);
 	std::cout << std::endl;
 
@@ -55,7 +55,7 @@ int	main(void) {
 	std::string strArray[] = {"hello", "world", "this", "is", "C++"};
 	iter(strArray, 5, print<std::string>);
 	std::cout << std::endl;
-	iter(strArray, 5, increase<std::string>);
+	iter(strArray, 5, increase<std::string>); //probar con 49 en el increase para ver que concatena un 1 en vez de sumar.
 	iter(strArray, 5, print<std::string>);
 	std::cout << std::endl;
 	return (0);
