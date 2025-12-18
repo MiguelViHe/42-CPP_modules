@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 11:00:03 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/11/03 14:42:06 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/12/18 16:47:43 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ Span::Span(const unsigned int N) : _maxNumbers(N)
 
 //_numbers(other._numbers) ya se encarga de reservar memoria y copiar los valores
 // del vector other._numbers al nuevo objeto que se está creando. AMBOS tienen
-// espacios de memoria diferentes.
+// espacios de memoria diferentes. Pero solo porque es un contenedor ya definido
+// que tiene sus propio constructor de copia ya definido para hacer el deep_copy.
+//Por ejemplo en un array creado por nosotros mismo (new()) tendriamos que hacer
+// un bucle para copiar elemento a elemento.
 Span::Span(const Span& other) : _maxNumbers(other._maxNumbers), _numbers(other._numbers)
 {
 	std::cout << "Span copy constructor called" << std::endl;

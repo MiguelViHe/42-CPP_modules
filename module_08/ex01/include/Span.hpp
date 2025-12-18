@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 11:00:07 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/11/03 14:52:20 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/12/18 16:28:07 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ private:
 };
 
 template <typename It>
-void Span::addMultipleNumbers(It begin, It end)
+void Span::addMultipleNumbers(It begin, It end) //It son iteradores del contenedor que contiene los valores a añadir. Como es un template vale cualquiera.
 {
 	if (std::distance(begin, end) + _numbers.size() > _maxNumbers)
 		throw Span::SpanFullException();
