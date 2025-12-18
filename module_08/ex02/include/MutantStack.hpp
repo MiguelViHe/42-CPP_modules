@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 11:07:52 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/11/04 11:24:56 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/12/18 18:17:53 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ public:
 	 MutantStack<int>::iterator it -> y valdria para cualquier tipo de Container
 	 std::deque<int>::iterator o un std::vector<int>::iterator dependiendo de
 	 como instanciamos MutantStack */
-	typedef typename Container::iterator iterator;
+	typedef typename Container::iterator iterator; //Defino un tipo llamado iterator que es exactamente el mismo tipo que Container::iterator
 	typedef typename Container::const_iterator const_iterator;
 	typedef typename Container::reverse_iterator reverse_iterator;
 	typedef typename Container::const_reverse_iterator const_reverse_iterator;
