@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 16:55:51 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/10/29 11:10:53 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/12/18 15:32:24 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Array<T>& Array<T>::operator=(const Array<T>& other) {
 		if (_size != other._size) {
 			delete[] _array;
 			_size = other._size;
-			_array = new T[_size]();
+			_array = new T[_size](); //el parentesis al final activa la inicializacion a los valores por defecto automatica.
 		}
 		for (unsigned int i = 0; i < _size; i++)
 			_array[i] = other._array[i];

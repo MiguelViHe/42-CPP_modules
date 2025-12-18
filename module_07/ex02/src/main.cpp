@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 11:34:49 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/10/29 12:44:03 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/12/18 15:25:00 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int main(void)
 	}
 	std::cout << std::endl << std::endl;
 
-	std::cout << "Test 4: constructor copy" << std::endl;
+	std::cout << "Test 4: constructor copy intArray3(intArray2)" << std::endl;
 	Array<int> intArray3(intArray2);
 	std::cout << "Size: " << intArray3.size() << std::endl;
 	std::cout << "Print Array contents (intArray3): " << std::endl;
@@ -55,7 +55,7 @@ int main(void)
 	}
 	std::cout << std::endl << std::endl;
 
-	std::cout << "Test 5: assignment operator" << std::endl;
+	std::cout << "Test 5: assignment operator (intArray4 = intArray2)" << std::endl;
 	Array<int> intArray4;
 	intArray4 = intArray2;
 	std::cout << "Size: " << intArray4.size() << std::endl;
@@ -100,7 +100,7 @@ int main(void)
 	}
 	std::cout << std::endl << std::endl;
 
-	std::cout << "Test 8.1: creation of an Array of 3 strings" << std::endl;
+	std::cout << "Test 8.1: creation of an Array of 3 strings (strArray(3))" << std::endl;
 	Array<std::string> strArray(3);
 	std::cout << "Size: " << strArray.size() << std::endl;
 	for (unsigned int i = 0; i < strArray.size(); i++) {
@@ -109,7 +109,7 @@ int main(void)
 	}
 	std::cout << std::endl;
 
-	std::cout << "Test 8.2: creation of an Array of 5 strings" << std::endl;
+	std::cout << "Test 8.2: creation of an Array of 5 strings (strArray2(5))" << std::endl;
 	Array<std::string> strArray2(5);
 	std::cout << "Size: " << strArray2.size() << std::endl;
 	for (unsigned int i = 0; i < strArray2.size(); i++) {
