@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 10:58:02 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/12/18 12:35:55 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/12/23 14:38:25 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 int	main(void) {
 
 	int array[] = {1, 2, 3, 4, 5};
-	iter(array, 5, print<int>);
+	iter(array, 5, print<int>); //al ser un template hay que instanciarla a un tipo concreto (<int>).
 	std::cout << std::endl;
 	iter(array, 5, increase<int>);
 	iter(array, 5, print<int>);
