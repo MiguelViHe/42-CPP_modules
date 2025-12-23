@@ -6,14 +6,14 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 16:55:51 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/12/18 15:32:24 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/12/23 17:21:09 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
 
 template <typename T>
-Array<T>::Array() : _array(nullptr), _size(0) {}
+Array<T>::Array() : _array(NULL), _size(0) {}
 
 template <typename T>
 Array<T>::Array(unsigned int n) : _array(new T[n]()), _size(n) {}
