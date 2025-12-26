@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 11:34:49 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/12/18 15:25:00 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/12/26 10:37:15 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "Array.hpp"
 #include <cstdlib> // for rand() and srand()
 #include <ctime> // for time()
+#include <sstream> // for ostringstream
 
 int main(void)
 {
@@ -104,7 +105,9 @@ int main(void)
 	Array<std::string> strArray(3);
 	std::cout << "Size: " << strArray.size() << std::endl;
 	for (unsigned int i = 0; i < strArray.size(); i++) {
-		strArray[i] = "String_" + std::to_string(i);
+		std::ostringstream oss;
+		oss << "String_" << i;
+		strArray[i] = oss.str();
 		std::cout << strArray[i] << " ";
 	}
 	std::cout << std::endl;
@@ -113,7 +116,9 @@ int main(void)
 	Array<std::string> strArray2(5);
 	std::cout << "Size: " << strArray2.size() << std::endl;
 	for (unsigned int i = 0; i < strArray2.size(); i++) {
-		strArray2[i] = "Text_" + std::to_string(i);
+		std::ostringstream oss;
+		oss << "Text_" << i;
+		strArray2[i] = oss.str();
 		std::cout << strArray2[i] << " ";
 	}
 	std::cout << std::endl;

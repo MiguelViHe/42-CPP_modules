@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/20 17:19:15 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/11/27 16:28:30 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/12/26 11:11:19 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,11 @@ void	PmergeMe::validateArgv()
 		if (number < 0)
 			throw PmergeMeException("Negative values are not allowed: '" + std::string(_argv[i]) + "'");
 		if (number > INT_MAX)
-			throw PmergeMeException("Value out of INT range (must be <= " + std::to_string(INT_MAX) + ")");
+		{
+			std::ostringstream oss;
+			oss << "Value out of INT range (must be <= " << INT_MAX << "): '" << _argv[i] << "'";
+			throw PmergeMeException(oss.str());
+		}
 	}
 }
 

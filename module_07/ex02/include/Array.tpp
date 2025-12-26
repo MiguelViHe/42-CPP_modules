@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 16:55:51 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/12/23 17:21:09 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/12/26 10:29:13 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ Array<T>::~Array() {
 
 template <typename T>
 T& Array<T>::operator[](unsigned int index) {
-	if (index < 0 || index >= _size) {
+	if (index >= _size) {
 		throw OutOfBoundsException();
 	}
 	return _array[index];
@@ -59,5 +59,5 @@ unsigned int Array<T>::size() const {
 
 template <typename T>
 const char* Array<T>::OutOfBoundsException::what() const throw() {
-	return "Index out of bounds";
+	return "Index out of boundsq";
 }

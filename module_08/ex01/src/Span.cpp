@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 11:00:03 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/12/18 16:47:43 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/12/26 10:43:00 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Span::Span(const unsigned int N) : _maxNumbers(N)
 // que tiene sus propio constructor de copia ya definido para hacer el deep_copy.
 //Por ejemplo en un array creado por nosotros mismo (new()) tendriamos que hacer
 // un bucle para copiar elemento a elemento.
-Span::Span(const Span& other) : _maxNumbers(other._maxNumbers), _numbers(other._numbers)
+Span::Span(const Span& other) : _numbers(other._numbers), _maxNumbers(other._maxNumbers)
 {
 	std::cout << "Span copy constructor called" << std::endl;
 }

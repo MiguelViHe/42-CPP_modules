@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/03 11:00:07 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/12/18 16:28:07 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/12/26 10:40:09 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void Span::addMultipleNumbers(It begin, It end) //It son iteradores del contened
 {
 	if (std::distance(begin, end) + _numbers.size() > _maxNumbers)
 		throw Span::SpanFullException();
-		_numbers.insert(_numbers.end(), begin, end);
+	_numbers.insert(_numbers.end(), begin, end);
 }
 
 #endif // SPAN_HPP

@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 12:07:07 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/11/04 12:29:21 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/12/26 10:48:40 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int main()
 	}
 	std::cout << "----- MutantStack with custom container (vector) -----" << std::endl;
 	{
-		MutantStack<std::string, std::vector<std::string>> mstackv;
+		MutantStack< std::string, std::vector<std::string> > mstackv;
 		mstackv.push("Hello");
 		mstackv.push("World");
 		std::cout << mstackv.top() << std::endl;
@@ -52,8 +52,8 @@ int main()
 		mstackv.push("C++");
 		mstackv.push("module8");
 		mstackv.push("ex02");
-		MutantStack<std::string, std::vector<std::string>>::reverse_iterator rit = mstackv.rbegin();
-		MutantStack<std::string, std::vector<std::string>>::reverse_iterator rite = mstackv.rend();
+		MutantStack< std::string, std::vector<std::string> >::reverse_iterator rit = mstackv.rbegin();
+		MutantStack< std::string, std::vector<std::string> >::reverse_iterator rite = mstackv.rend();
 		while (rit < rite)
 		{
 			std::cout << *rit << std::endl;

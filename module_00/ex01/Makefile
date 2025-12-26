@@ -6,7 +6,7 @@
 #    By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/05/14 11:49:55 by mvidal-h          #+#    #+#              #
-#    Updated: 2025/05/22 14:09:39 by mvidal-h         ###   ########.fr        #
+#    Updated: 2025/12/26 10:05:34 by mvidal-h         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,7 @@ $(NAME): $(OBJ)
 $(OBJ_DIR)%.o:$(SRC_DIR)%.cpp
 	@mkdir -p $(OBJ_DIR)
 	@echo "$(YELLOW)Compiling [$@]...$(RESET)"
-	@$(CC) $(CFLAGS) -I $(INC_DIR) -o $@ -c $<
+	@$(CC) $(CPPFLAGS) -I $(INC_DIR) -o $@ -c $<
 	@printf "$(UP)$(CUT)"
 	@echo "$(GREEN)Finished [$@]$(RESET)"
 	@printf "$(UP)$(CUT)"

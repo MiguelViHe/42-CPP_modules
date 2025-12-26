@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 13:21:08 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/11/17 10:01:03 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2025/12/26 10:59:50 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	BitcoinExchange::loadDatabase()
 
 void	BitcoinExchange::processInputFile(const std::string &filename) const
 {
-	std::ifstream file(filename);
+	std::ifstream file(filename.c_str());
 	if (!file.is_open())
 		throw std::runtime_error("Error: could not open file " + filename);
 	std::string line;
@@ -103,8 +103,10 @@ void	BitcoinExchange::processInputFile(const std::string &filename) const
 			else if (value > 1000)
 				std::cerr << "Error: too large a number." << std::endl;
 			else
+			{
 				std::cerr << "Error: bad input => " << line << std::endl;
 				continue;
+			}
 		}
 		print_output(date, value);
 	}
