@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/28 16:16:14 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/12/26 10:24:50 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2026/01/08 16:06:55 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ public:
 	~Array();
 
 	T& operator[](unsigned int index);
+	T& operator[](unsigned int index) const;
 	unsigned int	size() const;
 
 	class OutOfBoundsException : public std::exception

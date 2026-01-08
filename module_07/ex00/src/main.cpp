@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 16:50:57 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/10/27 17:56:33 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2026/01/08 16:08:11 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ int main( void ) {
 	std::cout << "i = " << *i << ", j = " << *j << std::endl;
 	std::cout << "min( i, j ) = " << ::min( *i, *j ) << std::endl;
 	std::cout << "max( g, h ) = " << ::max( *i, *j ) << std::endl;
-	delete g;
-	delete h;
+	delete i;
+	delete j;
 	return 0;
 }
 
