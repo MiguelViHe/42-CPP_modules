@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 13:21:08 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/12/26 10:59:50 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2026/01/13 13:12:45 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,10 +103,8 @@ void	BitcoinExchange::processInputFile(const std::string &filename) const
 			else if (value > 1000)
 				std::cerr << "Error: too large a number." << std::endl;
 			else
-			{
 				std::cerr << "Error: bad input => " << line << std::endl;
-				continue;
-			}
+			continue;
 		}
 		print_output(date, value);
 	}
@@ -135,7 +133,7 @@ bool BitcoinExchange::isValidDate(const std::string& date) const
 			tm.tm_mday = value;
 		i++;
 	}
-	if (i != 3)
+	if (i != 3) // If it hasn't all the date parts
 		return false;
 	std::tm original_tm = tm;
 	if (std::mktime(&tm) == -1) // Normaliza la estructura tm ajustandola con desbordes (ejemplo 32 de enero pasa a 1 de febrero). Devuelve -1 si la fecha es invalida por ejemplo año < 1900
@@ -186,9 +184,8 @@ double BitcoinExchange::getRateForDate(const std::string& date) const
 	if (_rates_db.empty())
 		return 0.0;
 	std::map<std::string, double>::const_iterator it = _rates_db.lower_bound(date);
-	if (it == _rates_db.begin())
-		if (it->first != date)
-			return 0.0;
+	if (it == _rates_db.begin() && it->first != date)
+		return 0.0;
 	if (it == _rates_db.end() || it->first != date)
 		--it;
 	return it->second;

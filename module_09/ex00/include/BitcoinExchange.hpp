@@ -6,7 +6,7 @@
 /*   By: mvidal-h <mvidal-h@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/05 17:07:14 by mvidal-h          #+#    #+#             */
-/*   Updated: 2025/11/11 17:30:39 by mvidal-h         ###   ########.fr       */
+/*   Updated: 2026/01/13 12:34:54 by mvidal-h         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ class BitcoinExchange
 		BitcoinExchange& operator=(const BitcoinExchange& other);
 		~BitcoinExchange();
 
-		void	loadDatabase();
 		void	processInputFile(const std::string &filename) const; //process txt
 		
 		class HeaderException : public std::exception
@@ -38,6 +37,7 @@ class BitcoinExchange
 	private:
 		std::map<std::string, double> _rates_db; //como un diccionario donde la clave debe ser unica y el valor puede repetirse
 		
+		void	loadDatabase();
 		bool	isValidDate(const std::string& date) const;
 		bool	isValidValue(const std::string& str, double& value) const;
 		double	getRateForDate(const std::string& date) const;
